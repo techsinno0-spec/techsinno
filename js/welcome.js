@@ -54,13 +54,16 @@
   }
 
   function speak() {
+    console.log('[TECHSINNO] speak() called');
     var btn = document.getElementById('speak-btn');
     var w = W();
     if (!('speechSynthesis' in window)) {
+      console.log('[TECHSINNO] no speechSynthesis');
       alert('Text-to-speech needs Chrome, Edge, or Safari.');
       return;
     }
     var synth = window.speechSynthesis;
+    console.log('[TECHSINNO] speaking=' + synth.speaking + ' pending=' + synth.pending + ' voices=' + synth.getVoices().length);
 
     // Toggle off if currently speaking
     if (synth.speaking) {
@@ -75,17 +78,23 @@
     var u = new SpeechSynthesisUtterance(w.short);
     // IMPORTANT: do NOT force u.lang — set the voice instead.
     var v = pickVoice(VOICE_PREFIX[lang()] || 'en');
+    console.log('[TECHSINNO] picked voice: ' + (v ? v.name + ' (' + v.lang + ')' : 'NONE'));
     if (v) { u.voice = v; u.lang = v.lang; }
     u.rate = 0.95; u.pitch = 1.0; u.volume = 1.0;
 
-    u.onstart = function () { if (btn) btn.textContent = w.speaking; };
-    u.onend   = function () { if (btn) btn.textContent = w.btn; };
-    u.onerror = function () { if (btn) btn.textContent = w.btn; };
+    u.onstart = function () { console.log('[TECHSINNO] >>> SPEECH STARTED'); if (btn) btn.textContent = w.speaking; };
+    u.onend   = function () { console.log('[TECHSINNO] >>> SPEECH ENDED'); if (btn) btn.textContent = w.btn; };
+    u.onerror = function (e) { console.log('[TECHSINNO] >>> SPEECH ERROR: ' + (e.error || 'unknown')); if (btn) btn.textContent = w.btn; };
 
     // Speak after a tiny delay so cancel() fully clears (Chrome quirk)
     setTimeout(function () {
+      console.log('[TECHSINNO] calling synth.speak now');
       synth.speak(u);
-      setTimeout(function () { if (synth.paused) synth.resume(); }, 150);
+      console.log('[TECHSINNO] after speak: speaking=' + synth.speaking + ' pending=' + synth.pending);
+      setTimeout(function () {
+        console.log('[TECHSINNO] 150ms check: speaking=' + synth.speaking + ' paused=' + synth.paused);
+        if (synth.paused) synth.resume();
+      }, 150);
     }, 60);
   }
 
@@ -127,7 +136,8 @@
         banner.classList.remove('wb-show');
         banner.classList.add('wb-hidden');
       });
-      if (btn) btn.addEventListener('click', speak);
+      if (btn) { btn.addEventListener('click', speak); console.log('[TECHSINNO] speak button listener attached'); }
+      else { console.log('[TECHSINNO] WARNING: speak-btn not found!'); }
 
       // Just warm up voices — do NOT speak a blank utterance (that was jamming the queue)
       if ('speechSynthesis' in window) {
