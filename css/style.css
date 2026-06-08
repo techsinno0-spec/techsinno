@@ -546,8 +546,6 @@ footer { background: var(--navy); padding: 56px 0 24px; position: relative; z-in
 
 /* ── Clickable service cards ── */
 .clickable-card { cursor: pointer; }
-.clickable-card * { pointer-events: none; }
-.clickable-card .service-link { pointer-events: auto; }
 
 
 /* ── BOOKING SECTION ── */
