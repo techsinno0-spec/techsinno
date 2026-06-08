@@ -18,6 +18,45 @@
 <!-- ══════════════════════════════════════════
      NAVBAR
 ══════════════════════════════════════════ -->
+<!-- ══════════════════════════════════════════
+     WELCOME BANNER
+══════════════════════════════════════════ -->
+<div id="welcome-banner" style="
+  position:fixed; bottom:28px; right:28px; z-index:2000;
+  background: var(--navy,#0a1628); border-radius:16px;
+  padding:20px 24px; max-width:320px; width:calc(100vw - 56px);
+  box-shadow:0 8px 40px rgba(10,22,40,0.25);
+  border-left:4px solid #00cc44;
+  transform:translateY(120px); opacity:0;
+  transition:transform 0.5s cubic-bezier(.34,1.56,.64,1), opacity 0.5s ease;
+  display:flex; flex-direction:column; gap:12px;
+">
+  <div style="display:flex; justify-content:space-between; align-items:flex-start; gap:12px;">
+    <div>
+      <div style="font-family:monospace; font-size:10px; color:#00cc44; letter-spacing:3px; text-transform:uppercase; margin-bottom:6px;">// TECHSINNO</div>
+      <p id="welcome-text" style="font-size:13px; color:#ffffff; line-height:1.6; margin:0;"></p>
+    </div>
+    <button onclick="document.getElementById('welcome-banner').style.display='none'" style="
+      background:transparent; border:none; color:#8a9ab0; cursor:pointer;
+      font-size:18px; padding:0; line-height:1; flex-shrink:0; margin-top:2px;
+    ">✕</button>
+  </div>
+  <div style="display:flex; gap:8px; align-items:center;">
+    <button id="speak-btn" onclick="speakWelcome()" style="
+      font-family:monospace; font-size:11px; letter-spacing:1px; text-transform:uppercase;
+      padding:8px 16px; background:#00cc44; color:#000; border:none; border-radius:6px;
+      cursor:pointer; display:flex; align-items:center; gap:6px; font-weight:600;
+      transition:background 0.2s;
+    ">
+      <span>🔊</span> <span id="speak-btn-label">HEAR IT</span>
+    </button>
+    <a href="#contact" onclick="document.getElementById('welcome-banner').style.display='none'" style="
+      font-family:monospace; font-size:11px; color:#00cc44; text-decoration:none;
+      letter-spacing:1px; text-transform:uppercase; padding:8px 0;
+    ">GET A QUOTE →</a>
+  </div>
+</div>
+
 <nav id="navbar">
   <div class="nav-inner">
     <a href="#hero" class="nav-logo">
@@ -143,36 +182,37 @@
 
     <div class="services-grid">
 
-      <!-- Service 1: Electronics -->
+      <!-- Service 1: Electronics Engineering -->
       <div class="service-card fade-up">
         <div class="service-num">01</div>
         <div class="service-icon"><i class="ti ti-circuit-board" aria-hidden="true"></i></div>
         <h3 data-i18n="s1_title">ELECTRONICS<br>ENGINEERING</h3>
-        <p data-i18n="s1_desc">Full-cycle electronics services — from consultation and design to build, installation, maintenance, and PCB-level repair.</p>
+        <p data-i18n="s1_desc">Full-cycle electronics services — consultation, design, build, installation, maintenance, and B2B repair of industrial and commercial electronics.</p>
         <div class="service-tags">
           <span class="tag">Consultation</span>
           <span class="tag">Design & Build</span>
-          <span class="tag">PCB Repair</span>
-          <span class="tag">SMD Rework</span>
           <span class="tag">Installation</span>
           <span class="tag">Maintenance</span>
+          <span class="tag">B2B Repair</span>
+          <span class="tag">SMD Rework</span>
         </div>
         <a href="#contact" class="service-link" data-i18n="s1_link">Get started <i class="ti ti-arrow-right" aria-hidden="true"></i></a>
       </div>
 
-      <!-- Service 2: Repair -->
+      <!-- Service 2: PCB Design -->
       <div class="service-card fade-up">
         <div class="service-num">02</div>
-        <div class="service-icon"><i class="ti ti-cpu" aria-hidden="true"></i></div>
-        <h3 data-i18n="s2_title">B2B ELECTRONICS<br>REPAIR</h3>
-        <p data-i18n="s2_desc">PCB-level fault finding, component replacement, and functional testing for industrial and commercial electronics.</p>
+        <div class="service-icon"><i class="ti ti-vector-bezier-2" aria-hidden="true"></i></div>
+        <h3 data-i18n="s2_title">PCB DESIGN &amp;<br>ENGINEERING</h3>
+        <p data-i18n="s2_desc">Professional PCB design services — schematic capture, PCB layout, design rule checks, and manufacturing-ready Gerber file output.</p>
         <div class="service-tags">
-          <span class="tag">Fault Diagnosis</span>
-          <span class="tag">Component-Level</span>
-          <span class="tag">Industrial</span>
-          <span class="tag">Commercial</span>
+          <span class="tag">Schematic Capture</span>
+          <span class="tag">PCB Layout</span>
+          <span class="tag">DRC / ERC</span>
+          <span class="tag">Gerber Output</span>
+          <span class="tag">Multi-layer</span>
         </div>
-        <a href="#contact" class="service-link" data-i18n="s2_link">Request repair <i class="ti ti-arrow-right" aria-hidden="true"></i></a>
+        <a href="#contact" class="service-link" data-i18n="s2_link">Start design <i class="ti ti-arrow-right" aria-hidden="true"></i></a>
       </div>
 
       <!-- Service 3: Automation -->
@@ -546,5 +586,6 @@
 
 <script src="js/main.js"></script>
 <script src="js/form.js"></script>
+<script src="js/welcome.js"></script>
 </body>
 </html>
