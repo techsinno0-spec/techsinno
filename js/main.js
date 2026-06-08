@@ -582,6 +582,15 @@ document.addEventListener('DOMContentLoaded', () => {
   initMobileNav();
   initForm();
 
+
+  // ── Service card navigation ──────────────────────────────
+  document.querySelectorAll('.clickable-card[data-page]').forEach(card => {
+    card.addEventListener('click', (e) => {
+      const page = card.getAttribute('data-page');
+      if (page) window.location.href = page;
+    });
+  });
+
   document.querySelectorAll('.lang-btn').forEach(btn => {
     btn.addEventListener('click', () => applyLang(btn.dataset.lang));
   });
