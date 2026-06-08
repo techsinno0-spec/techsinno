@@ -1,25 +1,32 @@
 // ============================================================
-// js/booking.js — TECHSINNO Booking Section
+// js/booking.js — TECHSINNO Booking Section (v2 - event listeners)
 // ============================================================
 
-window.selectBookingType = function (el, type) {
-  // Update active state
-  document.querySelectorAll('.booking-type').forEach(t => t.classList.remove('active'));
-  el.classList.add('active');
-
-  // Set hidden field
-  const hidden = document.getElementById('bookingType');
-  if (hidden) hidden.value = type;
-
-  // Show/hide address field for site visits
-  const addressGroup = document.getElementById('address-group');
-  if (addressGroup) {
-    addressGroup.style.display = (type === 'sitevisit') ? 'flex' : 'none';
-  }
-};
-
-// ── Booking form submission ─────────────────────────────────
 document.addEventListener('DOMContentLoaded', () => {
+  // ── Booking type selection via event listeners ──────────
+  const types = document.querySelectorAll('.booking-type');
+  const hidden = document.getElementById('bookingType');
+  const addressGroup = document.getElementById('address-group');
+
+  types.forEach(typeEl => {
+    typeEl.addEventListener('click', () => {
+      const type = typeEl.getAttribute('data-type');
+
+      // Update active state
+      types.forEach(t => t.classList.remove('active'));
+      typeEl.classList.add('active');
+
+      // Set hidden field
+      if (hidden) hidden.value = type;
+
+      // Show/hide address field for site visits
+      if (addressGroup) {
+        addressGroup.style.display = (type === 'sitevisit') ? 'flex' : 'none';
+      }
+    });
+  });
+
+  // ── Booking form submission ─────────────────────────────
   const form = document.getElementById('booking-form');
   if (!form) return;
 
@@ -36,9 +43,8 @@ document.addEventListener('DOMContentLoaded', () => {
     const btn = form.querySelector('.btn-primary');
     const origBtn = btn.textContent;
 
-    // Gather data
     const data = {
-      bookingType: form.querySelector('[name="bookingType"]').value,
+      bookingType: hidden ? hidden.value : 'meeting',
       firstName:   form.querySelector('[name="bk_firstname"]').value.trim(),
       lastName:    form.querySelector('[name="bk_lastname"]').value.trim(),
       email:       form.querySelector('[name="bk_email"]').value.trim(),
@@ -49,7 +55,6 @@ document.addEventListener('DOMContentLoaded', () => {
       notes:       form.querySelector('[name="bk_notes"]').value.trim(),
     };
 
-    // Basic validation
     if (!data.firstName || !data.lastName || !data.email || !data.date || !data.time) {
       if (msgBox) {
         msgBox.style.display = 'block';
