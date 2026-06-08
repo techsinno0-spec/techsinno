@@ -21,39 +21,13 @@
 <!-- ══════════════════════════════════════════
      WELCOME BANNER
 ══════════════════════════════════════════ -->
-<div id="welcome-banner" style="
-  position:fixed; bottom:28px; right:28px; z-index:2000;
-  background: var(--navy,#0a1628); border-radius:16px;
-  padding:20px 24px; max-width:320px; width:calc(100vw - 56px);
-  box-shadow:0 8px 40px rgba(10,22,40,0.25);
-  border-left:4px solid #00cc44;
-  transform:translateY(120px); opacity:0;
-  transition:transform 0.5s cubic-bezier(.34,1.56,.64,1), opacity 0.5s ease;
-  display:flex; flex-direction:column; gap:12px;
-">
-  <div style="display:flex; justify-content:space-between; align-items:flex-start; gap:12px;">
-    <div>
-      <div style="font-family:monospace; font-size:10px; color:#00cc44; letter-spacing:3px; text-transform:uppercase; margin-bottom:6px;">// TECHSINNO</div>
-      <p id="welcome-text" style="font-size:13px; color:#ffffff; line-height:1.6; margin:0;"></p>
-    </div>
-    <button onclick="document.getElementById('welcome-banner').style.display='none'" style="
-      background:transparent; border:none; color:#8a9ab0; cursor:pointer;
-      font-size:18px; padding:0; line-height:1; flex-shrink:0; margin-top:2px;
-    ">✕</button>
-  </div>
-  <div style="display:flex; gap:8px; align-items:center;">
-    <button id="speak-btn" onclick="speakWelcome()" style="
-      font-family:monospace; font-size:11px; letter-spacing:1px; text-transform:uppercase;
-      padding:8px 16px; background:#00cc44; color:#000; border:none; border-radius:6px;
-      cursor:pointer; display:flex; align-items:center; gap:6px; font-weight:600;
-      transition:background 0.2s;
-    ">
-      <span>🔊</span> <span id="speak-btn-label">HEAR IT</span>
-    </button>
-    <a href="#contact" onclick="document.getElementById('welcome-banner').style.display='none'" style="
-      font-family:monospace; font-size:11px; color:#00cc44; text-decoration:none;
-      letter-spacing:1px; text-transform:uppercase; padding:8px 0;
-    ">GET A QUOTE →</a>
+<div id="welcome-banner" aria-live="polite">
+  <button id="welcome-close" aria-label="Close" type="button">&times;</button>
+  <div class="wb-head">// TECHSINNO</div>
+  <p id="welcome-text"></p>
+  <div class="wb-actions">
+    <button id="speak-btn" type="button">🔊 HEAR IT</button>
+    <a href="#contact" id="wb-quote">GET A QUOTE →</a>
   </div>
 </div>
 
