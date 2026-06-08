@@ -627,6 +627,90 @@ footer { background: var(--navy); padding: 56px 0 24px; position: relative; z-in
   .booking-grid { grid-template-columns: 1fr; gap: 32px; }
 }
 
+
+/* ── HOW IT WORKS / PROCESS ── */
+#process {
+  padding: 100px 0;
+  background: rgba(255,255,255,0.82);
+  backdrop-filter: blur(4px);
+}
+.process-banner {
+  border-radius: 16px;
+  overflow: hidden;
+  box-shadow: 0 8px 40px rgba(10,22,40,0.2), 0 0 50px rgba(0,204,68,0.1);
+  border: 1px solid rgba(0,204,68,0.3);
+  margin-bottom: 48px;
+  max-width: 1000px;
+  margin-left: auto;
+  margin-right: auto;
+}
+.process-banner img {
+  width: 100%;
+  height: auto;
+  display: block;
+}
+.process-steps {
+  display: grid;
+  grid-template-columns: repeat(5, 1fr);
+  gap: 16px;
+}
+.process-step {
+  background: var(--white, #fff);
+  border: 1px solid var(--grey3, #c8d4e0);
+  border-radius: 14px;
+  padding: 24px 18px;
+  text-align: center;
+  position: relative;
+  box-shadow: 0 4px 24px rgba(10,22,40,0.08);
+  transition: all 0.3s;
+}
+.process-step:hover {
+  transform: translateY(-6px);
+  box-shadow: 0 8px 40px rgba(10,22,40,0.15);
+  border-color: var(--green, #00cc44);
+}
+.process-step-icon {
+  width: 52px; height: 52px;
+  border-radius: 50%;
+  background: rgba(0,204,68,0.1);
+  border: 1px solid rgba(0,204,68,0.3);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-size: 24px;
+  color: var(--green, #00cc44);
+  margin: 0 auto 16px;
+  transition: all 0.3s;
+}
+.process-step:hover .process-step-icon {
+  background: var(--green, #00cc44);
+  color: #fff;
+}
+.process-step-num {
+  font-family: var(--font-mono, monospace);
+  font-size: 11px;
+  color: var(--green, #00cc44);
+  letter-spacing: 2px;
+  margin-bottom: 6px;
+}
+.process-step h4 {
+  font-family: var(--font-display, sans-serif);
+  font-size: 20px;
+  color: var(--navy, #0a1628);
+  margin-bottom: 8px;
+}
+.process-step p {
+  font-size: 13px;
+  color: var(--grey, #5a6a7e);
+  line-height: 1.5;
+}
+@media (max-width: 900px) {
+  .process-steps { grid-template-columns: repeat(2, 1fr); }
+}
+@media (max-width: 560px) {
+  .process-steps { grid-template-columns: 1fr; }
+}
+
 /* ── ANIMATIONS ── */
 .fade-up { opacity: 0; transform: translateY(30px); transition: opacity 0.7s ease, transform 0.7s ease; }
 .fade-up.visible { opacity: 1; transform: translateY(0); }
