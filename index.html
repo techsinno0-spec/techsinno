@@ -1,0 +1,542 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>TECHSINNO — Smart Engineering Solutions</title>
+  <meta name="description" content="TECHSINNO (Pty) Ltd — B2B Electronics Repair, Industrial Automation, and Agricultural IoT. South Africa and DR Congo." />
+  <meta name="keywords" content="electronics repair, PLC automation, agricultural IoT, mechatronics, South Africa, DRC, Kuilsriver" />
+  <meta property="og:title" content="TECHSINNO — Smart Engineering Solutions" />
+  <meta property="og:description" content="Electronics Repair · Industrial Automation · Agricultural IoT" />
+  <meta property="og:type" content="website" />
+  <link rel="icon" type="image/png" href="img/logo.png" />
+  <link rel="stylesheet" href="css/style.css" />
+  <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/@tabler/icons-webfont@latest/tabler-icons.min.css" />
+</head>
+<body>
+
+<!-- ══════════════════════════════════════════
+     NAVBAR
+══════════════════════════════════════════ -->
+<nav id="navbar">
+  <div class="nav-inner">
+    <a href="#hero" class="nav-logo">
+      <img src="img/logo.png" alt="TECHSINNO" />
+    </a>
+
+    <ul class="nav-links">
+      <li><a href="#services" data-i18n="nav_0">Services</a></li>
+      <li><a href="#iot"      data-i18n="nav_1">IoT</a></li>
+      <li><a href="#about"   data-i18n="nav_2">About</a></li>
+      <li><a href="#contact" data-i18n="nav_3">Contact</a></li>
+      <li><a href="#portal"  data-i18n="nav_4">Portal</a></li>
+    </ul>
+
+    <div style="display:flex;align-items:center;gap:16px;">
+      <div class="lang-switcher">
+        <button class="lang-btn active" data-lang="en">EN</button>
+        <button class="lang-btn"        data-lang="fr">FR</button>
+        <button class="lang-btn"        data-lang="af">AF</button>
+      </div>
+      <div class="nav-toggle" id="nav-toggle" aria-label="Toggle menu">
+        <span></span><span></span><span></span>
+      </div>
+    </div>
+  </div>
+</nav>
+
+<!-- Mobile nav -->
+<div class="mobile-nav" id="mobile-nav">
+  <a href="#services" data-i18n="nav_0">Services</a>
+  <a href="#iot"      data-i18n="nav_1">IoT</a>
+  <a href="#about"    data-i18n="nav_2">About</a>
+  <a href="#contact"  data-i18n="nav_3">Contact</a>
+  <a href="#portal"   data-i18n="nav_4">Portal</a>
+</div>
+
+<!-- ══════════════════════════════════════════
+     HERO
+══════════════════════════════════════════ -->
+<section id="hero">
+  <div class="container">
+    <div class="hero-content">
+
+      <!-- Left: text -->
+      <div>
+        <p class="hero-eyebrow" data-i18n="hero_eyebrow">Engineering · Automation · IoT</p>
+        <h1 class="hero-title">
+          <span data-i18n="hero_line1">SMART</span><br>
+          <span class="line2" data-i18n="hero_line2">ENGINEERING</span><br>
+          <span data-i18n="hero_line3">SOLUTIONS</span>
+        </h1>
+        <p class="hero-tagline mono">
+          <span id="typewriter"></span><span class="cursor"></span>
+        </p>
+        <div class="hero-btns">
+          <a href="#contact" class="btn-primary" data-i18n="hero_btn1">Get a Quote</a>
+          <a href="#services" class="btn-outline" data-i18n="hero_btn2">Our Services</a>
+        </div>
+      </div>
+
+      <!-- Right: terminal panel -->
+      <div class="hero-panel scanline">
+        <div class="panel-header">
+          <span class="panel-dot pd-red"></span>
+          <span class="panel-dot pd-amber"></span>
+          <span class="panel-dot pd-green"></span>
+          <span class="panel-title">TECHSINNO // SYSTEM STATUS</span>
+        </div>
+        <div class="panel-body">
+          <div class="panel-row">
+            <span class="panel-key">STATUS</span>
+            <span class="panel-val"><span class="status-dot"></span>OPERATIONAL</span>
+          </div>
+          <div class="panel-row">
+            <span class="panel-key">LOCATION</span>
+            <span class="panel-val white">KUILSRIVER, ZA</span>
+          </div>
+          <div class="panel-row">
+            <span class="panel-key">COVERAGE</span>
+            <span class="panel-val white">SA + DRC</span>
+          </div>
+          <div class="panel-row">
+            <span class="panel-key">REG NO</span>
+            <span class="panel-val white">2022/364165/07</span>
+          </div>
+          <div class="panel-row">
+            <span class="panel-key">CLOUD</span>
+            <span class="panel-val"><span class="status-dot"></span>AZURE CONNECTED</span>
+          </div>
+          <div class="panel-row">
+            <span class="panel-key">IOT NODES</span>
+            <span class="panel-val"><span class="status-dot"></span>LIVE</span>
+          </div>
+          <div class="panel-row">
+            <span class="panel-key">AVAILABILITY</span>
+            <span class="panel-val white">EVENINGS + WEEKENDS</span>
+          </div>
+        </div>
+      </div>
+
+    </div><!-- /hero-content -->
+
+    <!-- Stats bar -->
+    <div class="hero-stats">
+      <div class="hero-stat fade-up">
+        <div class="hero-stat-num accent">3+</div>
+        <div class="hero-stat-label mono" data-i18n="stat1">YEARS EXP</div>
+      </div>
+      <div class="hero-stat fade-up">
+        <div class="hero-stat-num accent">2</div>
+        <div class="hero-stat-label mono" data-i18n="stat2">COUNTRIES</div>
+      </div>
+      <div class="hero-stat fade-up">
+        <div class="hero-stat-num accent">3</div>
+        <div class="hero-stat-label mono" data-i18n="stat3">SERVICE LINES</div>
+      </div>
+    </div>
+
+  </div>
+</section>
+
+<!-- ══════════════════════════════════════════
+     SERVICES
+══════════════════════════════════════════ -->
+<section id="services">
+  <div class="container">
+    <div class="services-header">
+      <div class="fade-up">
+        <span class="section-label" data-i18n="services_label">What we do</span>
+        <h2 data-i18n="services_title">THREE CORE<br>SERVICES</h2>
+      </div>
+      <p class="fade-up" data-i18n="services_desc">End-to-end engineering solutions — from component-level repair to cloud-connected agricultural sensors.</p>
+    </div>
+
+    <div class="services-grid">
+
+      <!-- Service 1: Repair -->
+      <div class="service-card fade-up">
+        <div class="service-num">01</div>
+        <div class="service-icon"><i class="ti ti-cpu" aria-hidden="true"></i></div>
+        <h3 data-i18n="s1_title">B2B ELECTRONICS<br>REPAIR</h3>
+        <p data-i18n="s1_desc">PCB-level fault finding, component replacement, and functional testing for industrial and commercial electronics.</p>
+        <div class="service-tags">
+          <span class="tag">PCB Repair</span>
+          <span class="tag">Fault Diagnosis</span>
+          <span class="tag">Component-Level</span>
+          <span class="tag">SMD Rework</span>
+        </div>
+        <a href="#contact" class="service-link" data-i18n="s1_link">Request repair <i class="ti ti-arrow-right" aria-hidden="true"></i></a>
+      </div>
+
+      <!-- Service 2: Automation -->
+      <div class="service-card fade-up">
+        <div class="service-num">02</div>
+        <div class="service-icon"><i class="ti ti-settings-automation" aria-hidden="true"></i></div>
+        <h3 data-i18n="s2_title">INDUSTRIAL<br>AUTOMATION</h3>
+        <p data-i18n="s2_desc">PLC programming, SCADA integration, and automated control systems for manufacturing and process plants.</p>
+        <div class="service-tags">
+          <span class="tag">PLC / SCADA</span>
+          <span class="tag">Siemens / Omron</span>
+          <span class="tag">Modbus / MQTT</span>
+          <span class="tag">HMI Design</span>
+        </div>
+        <a href="#contact" class="service-link" data-i18n="s2_link">Start a project <i class="ti ti-arrow-right" aria-hidden="true"></i></a>
+      </div>
+
+      <!-- Service 3: IoT -->
+      <div class="service-card fade-up">
+        <div class="service-num">03</div>
+        <div class="service-icon"><i class="ti ti-wifi" aria-hidden="true"></i></div>
+        <h3 data-i18n="s3_title">AGRICULTURAL<br>IoT</h3>
+        <p data-i18n="s3_desc">End-to-end sensor networks for farms — soil, climate, irrigation — with cloud dashboards and real-time alerts.</p>
+        <div class="service-tags">
+          <span class="tag">ESP32 / Arduino</span>
+          <span class="tag">Azure IoT Hub</span>
+          <span class="tag">MQTT / HTTP</span>
+          <span class="tag">Solar-Powered</span>
+        </div>
+        <a href="#contact" class="service-link" data-i18n="s3_link">Deploy sensors <i class="ti ti-arrow-right" aria-hidden="true"></i></a>
+      </div>
+
+    </div>
+  </div>
+</section>
+
+<!-- ══════════════════════════════════════════
+     IOT DASHBOARD
+══════════════════════════════════════════ -->
+<section id="iot">
+  <div class="container">
+    <div class="iot-layout">
+
+      <!-- Left: intro -->
+      <div class="iot-intro">
+        <span class="section-label fade-up" data-i18n="iot_label">Agricultural IoT</span>
+        <h2 class="fade-up" data-i18n="iot_title">YOUR FARM DATA,<br>ANYWHERE</h2>
+        <p class="fade-up" data-i18n="iot_p1">Custom Arduino and ESP32 sensor networks transmit live field data to an Azure cloud dashboard.</p>
+        <p class="fade-up" data-i18n="iot_p2">Get SMS or email alerts when thresholds are breached. No more walking the fields to check.</p>
+        <ul class="iot-features">
+          <li class="fade-up" data-i18n="iot_f1">Real-time sensor data via MQTT / HTTPS</li>
+          <li class="fade-up" data-i18n="iot_f2">Azure IoT Hub — 8,000 messages/day free</li>
+          <li class="fade-up" data-i18n="iot_f3">Custom web dashboard per client</li>
+          <li class="fade-up" data-i18n="iot_f4">SMS + email threshold alerts</li>
+          <li class="fade-up" data-i18n="iot_f5">Solar-powered nodes for remote fields</li>
+        </ul>
+        <a href="#contact" class="btn-primary fade-up" data-i18n="hero_btn1">Get a Quote</a>
+      </div>
+
+      <!-- Right: live dashboard -->
+      <div class="iot-dashboard fade-up">
+        <div class="dash-header">
+          <span class="dash-title mono"><span class="status-dot"></span> FIELD-A // LIVE</span>
+          <span class="dash-time mono" id="dash-clock">00:00:00</span>
+        </div>
+
+        <div class="dash-nodes">
+          <div class="node-card">
+            <div class="node-name mono"><i class="ti ti-droplet" aria-hidden="true"></i> MOISTURE</div>
+            <div class="node-val" id="val-moisture">61.0</div>
+            <div class="node-unit mono">% — Optimal</div>
+            <div class="mini-chart">
+              <div class="bar" style="height:40%"></div>
+              <div class="bar" style="height:55%"></div>
+              <div class="bar" style="height:62%"></div>
+              <div class="bar" style="height:58%"></div>
+              <div class="bar" style="height:61%"></div>
+              <div class="bar active" style="height:61%"></div>
+            </div>
+          </div>
+          <div class="node-card">
+            <div class="node-name mono"><i class="ti ti-temperature" aria-hidden="true"></i> SOIL TEMP</div>
+            <div class="node-val" id="val-temp">23.4</div>
+            <div class="node-unit mono">°C — Normal</div>
+            <div class="mini-chart">
+              <div class="bar" style="height:70%"></div>
+              <div class="bar" style="height:72%"></div>
+              <div class="bar" style="height:68%"></div>
+              <div class="bar" style="height:74%"></div>
+              <div class="bar" style="height:72%"></div>
+              <div class="bar active" style="height:72%"></div>
+            </div>
+          </div>
+          <div class="node-card">
+            <div class="node-name mono"><i class="ti ti-flask" aria-hidden="true"></i> SOIL pH</div>
+            <div class="node-val" id="val-ph">6.8</div>
+            <div class="node-unit mono">pH — Optimal</div>
+            <div class="mini-chart">
+              <div class="bar" style="height:66%"></div>
+              <div class="bar" style="height:68%"></div>
+              <div class="bar" style="height:67%"></div>
+              <div class="bar" style="height:69%"></div>
+              <div class="bar" style="height:68%"></div>
+              <div class="bar active" style="height:68%"></div>
+            </div>
+          </div>
+          <div class="node-card">
+            <div class="node-name mono"><i class="ti ti-sun" aria-hidden="true"></i> LIGHT</div>
+            <div class="node-val" id="val-light">42,300</div>
+            <div class="node-unit mono">lux — High</div>
+            <div class="mini-chart">
+              <div class="bar" style="height:80%"></div>
+              <div class="bar" style="height:85%"></div>
+              <div class="bar" style="height:88%"></div>
+              <div class="bar" style="height:84%"></div>
+              <div class="bar" style="height:87%"></div>
+              <div class="bar active" style="height:88%"></div>
+            </div>
+          </div>
+        </div>
+
+        <div class="dash-alerts">
+          <div class="alert-row"><span class="alert-ok mono">✓</span> <span class="mono">Irrigation valve — OPEN</span></div>
+          <div class="alert-row"><span class="alert-ok mono">✓</span> <span class="mono">Node 01 battery — 87%</span></div>
+          <div class="alert-row"><span class="alert-ok mono">✓</span> <span class="mono">Azure IoT Hub — Connected</span></div>
+          <div class="alert-row"><span class="alert-warn mono">⚠</span> <span class="mono">Node 03 — Low signal (-82 dBm)</span></div>
+        </div>
+      </div>
+
+    </div>
+  </div>
+</section>
+
+<!-- ══════════════════════════════════════════
+     ABOUT
+══════════════════════════════════════════ -->
+<section id="about">
+  <div class="container">
+    <div class="about-grid">
+
+      <div>
+        <span class="section-label fade-up" data-i18n="about_label">About TECHSINNO</span>
+        <h2 class="fade-up" data-i18n="about_title">ENGINEERS.<br>BUILDERS.<br>SOLVERS.</h2>
+        <div class="about-text">
+          <p class="fade-up" data-i18n="about_p1">TECHSINNO (Pty) Ltd is a registered South African engineering company specialising in electronics repair, industrial automation, and agricultural IoT.</p>
+          <p class="fade-up" data-i18n="about_p2">Led by a practising mechatronics and electronics engineer, TECHSINNO combines hands-on hardware expertise with modern cloud and software integration.</p>
+          <p class="fade-up" data-i18n="about_p3">Operations are headquartered in Kuilsriver, Western Cape, with planned expansion into Kinshasa, DRC.</p>
+        </div>
+        <div class="about-reg fade-up">
+          <p>
+            <strong>TECHSINNO (Pty) Ltd</strong><br>
+            Reg: 2022/364165/07 &nbsp;·&nbsp; Tax: 9234848266<br>
+            Kuilsriver, Western Cape, South Africa
+          </p>
+        </div>
+      </div>
+
+      <div class="about-presence">
+        <div class="country-card fade-up">
+          <span class="country-flag">🇿🇦</span>
+          <h4 data-i18n="sa_title">SOUTH AFRICA</h4>
+          <p data-i18n="sa_desc">Headquarters in Kuilsriver, Western Cape. Serving industrial, agricultural, and commercial clients across the Western Cape and beyond.</p>
+        </div>
+        <div class="country-card fade-up">
+          <span class="country-flag">🇨🇩</span>
+          <h4 data-i18n="drc_title">DR CONGO</h4>
+          <p data-i18n="drc_desc">Expanding into Kinshasa and broader DRC market — bringing automation, IoT, and electronics expertise to Central Africa.</p>
+        </div>
+      </div>
+
+    </div>
+  </div>
+</section>
+
+<!-- ══════════════════════════════════════════
+     CONTACT
+══════════════════════════════════════════ -->
+<section id="contact">
+  <div class="container">
+    <span class="section-label fade-up" data-i18n="contact_label">Get in touch</span>
+    <h2 class="fade-up" style="margin-bottom:48px;" data-i18n="contact_title">REQUEST A<br>QUOTE</h2>
+
+    <div class="contact-grid">
+
+      <!-- Info -->
+      <div class="contact-info fade-up">
+        <div class="contact-item">
+          <div class="contact-icon"><i class="ti ti-mail" aria-hidden="true"></i></div>
+          <div>
+            <h4 data-i18n="c_email">Email</h4>
+            <p>techsinno0@gmail.com</p>
+          </div>
+        </div>
+        <div class="contact-item">
+          <div class="contact-icon"><i class="ti ti-map-pin" aria-hidden="true"></i></div>
+          <div>
+            <h4>Location</h4>
+            <p>Kuilsriver, Western Cape<br>South Africa</p>
+          </div>
+        </div>
+        <div class="contact-item">
+          <div class="contact-icon"><i class="ti ti-clock" aria-hidden="true"></i></div>
+          <div>
+            <h4 data-i18n="c_avail">Availability</h4>
+            <p data-i18n="c_avail_val">Site visits: Weekends<br>Quotes &amp; design: Evenings</p>
+          </div>
+        </div>
+        <div class="contact-item">
+          <div class="contact-icon"><i class="ti ti-certificate" aria-hidden="true"></i></div>
+          <div>
+            <h4 data-i18n="c_reg">Registered Business</h4>
+            <p>TECHSINNO (Pty) Ltd<br>Reg: 2022/364165/07</p>
+          </div>
+        </div>
+      </div>
+
+      <!-- Form -->
+      <form id="quote-form" class="contact-form fade-up" onsubmit="return false;">
+        <div class="form-row">
+          <div class="form-group">
+            <label data-i18n="fn_label">First Name</label>
+            <input type="text" name="firstname" required />
+          </div>
+          <div class="form-group">
+            <label data-i18n="ln_label">Last Name</label>
+            <input type="text" name="lastname" required />
+          </div>
+        </div>
+        <div class="form-row">
+          <div class="form-group">
+            <label data-i18n="co_label">Company</label>
+            <input type="text" name="company" />
+          </div>
+          <div class="form-group">
+            <label data-i18n="email_label">Email Address</label>
+            <input type="email" name="email" required />
+          </div>
+        </div>
+        <div class="form-group">
+          <label data-i18n="service_label">Service Required</label>
+          <select name="service" required>
+            <option value="" data-i18n-option="svc_opt0">Select a service</option>
+            <option value="repair"     data-i18n-option="svc_opt1">Electronics Repair</option>
+            <option value="automation" data-i18n-option="svc_opt2">Industrial Automation</option>
+            <option value="iot"        data-i18n-option="svc_opt3">Agricultural IoT</option>
+            <option value="other"      data-i18n-option="svc_opt4">Other / Consultation</option>
+          </select>
+        </div>
+        <div class="form-group">
+          <label data-i18n="msg_label">Project Description</label>
+          <textarea name="message" data-i18n="msg_ph" placeholder="Describe your project or problem..." required></textarea>
+        </div>
+        <button type="submit" class="btn-primary form-submit-btn" data-i18n="submit_btn">Send Request →</button>
+        <div class="form-spinner" style="display:none; font-family:var(--font-mono); font-size:11px; color:var(--green); letter-spacing:2px; margin-top:8px;">▶ SENDING...</div>
+        <div class="form-message" style="display:none; font-family:var(--font-mono); font-size:12px; padding:12px 16px; border:1px solid; margin-top:12px; line-height:1.6;"></div>
+      </form>
+
+    </div>
+  </div>
+</section>
+
+<!-- ══════════════════════════════════════════
+     CLIENT PORTAL
+══════════════════════════════════════════ -->
+<section id="portal">
+  <div class="container">
+    <div class="portal-inner">
+
+      <!-- Login box -->
+      <div class="portal-login fade-up">
+        <span class="section-label" data-i18n="portal_label">Client Portal</span>
+        <h3 data-i18n="portal_title">CLIENT<br>ACCESS</h3>
+        <p class="mono" data-i18n="portal_sub">// Secure portal — clients only</p>
+
+        <div class="contact-form" style="margin-top:0;">
+          <div class="form-group">
+            <label data-i18n="portal_email">Email address</label>
+            <input type="email" placeholder="client@company.com" />
+          </div>
+          <div class="form-group">
+            <label data-i18n="portal_pass">Password</label>
+            <input type="password" placeholder="••••••••" />
+          </div>
+          <button class="btn-primary" data-i18n="portal_btn" onclick="alert('Portal coming soon — access provided after project onboarding.')">Sign In →</button>
+          <p class="mono muted" style="font-size:11px;margin-top:8px;" data-i18n="portal_note">Access provided after project onboarding.</p>
+        </div>
+      </div>
+
+      <!-- Portal features -->
+      <div class="portal-features fade-up">
+        <div class="portal-feature">
+          <div class="portal-feature-icon"><i class="ti ti-chart-line" aria-hidden="true"></i></div>
+          <div>
+            <h4 data-i18n="pf1_title">IOT DASHBOARDS</h4>
+            <p data-i18n="pf1_desc">Live sensor feeds and historical data for your agricultural or industrial deployment.</p>
+          </div>
+        </div>
+        <div class="portal-feature">
+          <div class="portal-feature-icon"><i class="ti ti-checklist" aria-hidden="true"></i></div>
+          <div>
+            <h4 data-i18n="pf2_title">PROJECT STATUS</h4>
+            <p data-i18n="pf2_desc">Track repair and automation project progress, milestones, and delivery dates.</p>
+          </div>
+        </div>
+        <div class="portal-feature">
+          <div class="portal-feature-icon"><i class="ti ti-file-invoice" aria-hidden="true"></i></div>
+          <div>
+            <h4 data-i18n="pf3_title">INVOICES &amp; DOCS</h4>
+            <p data-i18n="pf3_desc">Download invoices, technical reports, and maintenance schedules from your portal.</p>
+          </div>
+        </div>
+      </div>
+
+    </div>
+  </div>
+</section>
+
+<!-- ══════════════════════════════════════════
+     FOOTER
+══════════════════════════════════════════ -->
+<footer>
+  <div class="container">
+    <div class="footer-top">
+
+      <div class="footer-brand">
+        <img src="img/logo.png" alt="TECHSINNO" />
+        <p data-i18n="footer_desc">Registered South African engineering company specialising in electronics repair, industrial automation, and agricultural IoT.</p>
+      </div>
+
+      <div class="footer-col">
+        <h5 data-i18n="fc1">Services</h5>
+        <ul>
+          <li><a href="#services" data-i18n="fl_s1">Electronics Repair</a></li>
+          <li><a href="#services" data-i18n="fl_s2">Industrial Automation</a></li>
+          <li><a href="#iot"      data-i18n="fl_s3">Agricultural IoT</a></li>
+          <li><a href="#portal"  data-i18n="fl_s4">Client Portal</a></li>
+        </ul>
+      </div>
+
+      <div class="footer-col">
+        <h5 data-i18n="fc2">Company</h5>
+        <ul>
+          <li><a href="#about" data-i18n="fl_c1">About Us</a></li>
+          <li><a href="#about" data-i18n="fl_c3">SA Operations</a></li>
+          <li><a href="#about" data-i18n="fl_c4">DRC Operations</a></li>
+        </ul>
+      </div>
+
+      <div class="footer-col">
+        <h5 data-i18n="fc3">Contact</h5>
+        <ul>
+          <li><a href="mailto:techsinno0@gmail.com" data-i18n="fl_e1">techsinno0@gmail.com</a></li>
+          <li><a href="#about" data-i18n="fl_e2">Kuilsriver, Western Cape</a></li>
+          <li><a href="#about" data-i18n="fl_e3">South Africa &amp; DRC</a></li>
+        </ul>
+      </div>
+
+    </div>
+
+    <div class="footer-bottom">
+      <p class="mono" data-i18n="copy">© 2026 TECHSINNO (Pty) Ltd — All rights reserved.</p>
+      <div class="footer-reg">
+        <p class="mono">Reg: 2022/364165/07 · Tax: 9234848266</p>
+        <p class="mono">Kuilsriver, Western Cape, South Africa</p>
+      </div>
+    </div>
+  </div>
+</footer>
+
+<script src="js/main.js"></script>
+<script src="js/form.js"></script>
+</body>
+</html>

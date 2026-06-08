@@ -1,0 +1,22 @@
+# ── Secrets — NEVER commit these ──
+api/local.settings.json
+api/.env
+.env
+*.env
+
+# ── Node modules — generated on deploy ──
+api/node_modules/
+node_modules/
+
+# ── OS junk ──
+.DS_Store
+Thumbs.db
+desktop.ini
+
+# ── Editor folders ──
+.vscode/
+.idea/
+
+# ── Azure build output ──
+.azure/
+dist/
