@@ -67,16 +67,17 @@
       <li><a href="#services" data-i18n="nav_0">Services</a></li>
       <li><a href="#iot"      data-i18n="nav_1">IoT</a></li>
       <li><a href="#about"   data-i18n="nav_2">About</a></li>
+      <li><a href="#booking" data-i18n="nav_booking">Booking</a></li>
       <li><a href="#contact" data-i18n="nav_3">Contact</a></li>
       <li><a href="#portal"  data-i18n="nav_4">Portal</a></li>
     </ul>
 
     <div style="display:flex;align-items:center;gap:16px;">
       <div class="lang-switcher">
-        <button class="lang-btn active" data-lang="en">EN</button>
-        <button class="lang-btn"        data-lang="fr">FR</button>
-        <button class="lang-btn"        data-lang="af">AF</button>
-        <button class="lang-btn"        data-lang="pt">PT</button>
+        <button class="lang-btn active" data-lang="en" data-tooltip="English" title="English" aria-label="Switch to English">EN</button>
+        <button class="lang-btn"        data-lang="fr" data-tooltip="Français" title="Français" aria-label="Passer au français">FR</button>
+        <button class="lang-btn"        data-lang="af" data-tooltip="Afrikaans" title="Afrikaans" aria-label="Skakel na Afrikaans">AF</button>
+        <button class="lang-btn"        data-lang="pt" data-tooltip="Português" title="Português" aria-label="Mudar para português">PT</button>
       </div>
       <div class="nav-toggle" id="nav-toggle" aria-label="Toggle menu">
         <span></span><span></span><span></span>
@@ -90,6 +91,7 @@
   <a href="#services" data-i18n="nav_0">Services</a>
   <a href="#iot"      data-i18n="nav_1">IoT</a>
   <a href="#about"    data-i18n="nav_2">About</a>
+  <a href="#booking"  data-i18n="nav_booking">Booking</a>
   <a href="#contact"  data-i18n="nav_3">Contact</a>
   <a href="#portal"   data-i18n="nav_4">Portal</a>
 </div>
@@ -186,32 +188,10 @@
     <div class="services-grid">
 
       <!-- Service 1: Electronics Engineering -->
-      <div class="service-card fade-up">
+      <div class="service-card fade-up clickable-card" onclick="window.location.href='electronics.html'" style="cursor:pointer;">
         <div class="service-num">01</div>
         <div class="service-icon"><i class="ti ti-circuit-board" aria-hidden="true"></i></div>
-        <div class="service-illustration">
-          <svg viewBox="0 0 120 70" xmlns="http://www.w3.org/2000/svg">
-            <rect x="10" y="10" width="100" height="50" rx="3" fill="none" stroke="#00cc44" stroke-width="1.5"/>
-            <rect x="20" y="20" width="30" height="20" rx="1" fill="none" stroke="#00cc44" stroke-width="1.2"/>
-            <line x1="20" y1="24" x2="15" y2="24" stroke="#00cc44" stroke-width="1"/>
-            <line x1="20" y1="28" x2="15" y2="28" stroke="#00cc44" stroke-width="1"/>
-            <line x1="20" y1="32" x2="15" y2="32" stroke="#00cc44" stroke-width="1"/>
-            <line x1="20" y1="36" x2="15" y2="36" stroke="#00cc44" stroke-width="1"/>
-            <line x1="50" y1="24" x2="55" y2="24" stroke="#00cc44" stroke-width="1"/>
-            <line x1="50" y1="28" x2="55" y2="28" stroke="#00cc44" stroke-width="1"/>
-            <line x1="50" y1="32" x2="55" y2="32" stroke="#00cc44" stroke-width="1"/>
-            <line x1="50" y1="36" x2="55" y2="36" stroke="#00cc44" stroke-width="1"/>
-            <circle cx="80" cy="25" r="8" fill="none" stroke="#00cc44" stroke-width="1.2"/>
-            <circle cx="80" cy="25" r="3" fill="#00cc44" opacity="0.4"/>
-            <line x1="60" y1="45" x2="75" y2="45" stroke="#00cc44" stroke-width="1"/>
-            <rect x="75" y="42" width="8" height="6" fill="none" stroke="#00cc44" stroke-width="1"/>
-            <line x1="83" y1="45" x2="100" y2="45" stroke="#00cc44" stroke-width="1"/>
-            <circle cx="35" cy="50" r="5" fill="none" stroke="#00cc44" stroke-width="1.2"/>
-            <line x1="30" y1="55" x2="25" y2="60" stroke="#00cc44" stroke-width="1"/>
-            <line x1="35" y1="55" x2="35" y2="60" stroke="#00cc44" stroke-width="1"/>
-            <line x1="40" y1="55" x2="45" y2="60" stroke="#00cc44" stroke-width="1"/>
-          </svg>
-        </div>
+        <div class="service-illustration service-illustration-img" style="background-image:url('img/electronics-card.jpg');"></div>
         <h3 data-i18n="s1_title">ELECTRONICS<br>ENGINEERING</h3>
         <p data-i18n="s1_desc">Full-cycle electronics services — consultation, design, build, installation, maintenance, and B2B repair of industrial and commercial electronics.</p>
         <div class="service-tags">
@@ -222,11 +202,11 @@
           <span class="tag">B2B Repair</span>
           <span class="tag">SMD Rework</span>
         </div>
-        <a href="#contact" class="service-link" data-i18n="s1_link">Get started <i class="ti ti-arrow-right" aria-hidden="true"></i></a>
+        <a href="electronics.html" class="service-link" data-i18n="s1_link">Get started <i class="ti ti-arrow-right" aria-hidden="true"></i></a>
       </div>
 
       <!-- Service 2: PCB Design -->
-      <div class="service-card fade-up">
+      <div class="service-card fade-up clickable-card" onclick="window.location.href='pcb-design.html'" style="cursor:pointer;">
         <div class="service-num">02</div>
         <div class="service-icon"><i class="ti ti-vector-bezier-2" aria-hidden="true"></i></div>
         <div class="service-illustration service-illustration-img" style="background-image:url('img/pcb-card.jpg');"></div>
@@ -239,11 +219,11 @@
           <span class="tag">Gerber Output</span>
           <span class="tag">Multi-layer</span>
         </div>
-        <a href="#contact" class="service-link" data-i18n="s2_link">Start design <i class="ti ti-arrow-right" aria-hidden="true"></i></a>
+        <a href="pcb-design.html" class="service-link" data-i18n="s2_link">Start design <i class="ti ti-arrow-right" aria-hidden="true"></i></a>
       </div>
 
       <!-- Service 3: Automation -->
-      <div class="service-card fade-up">
+      <div class="service-card fade-up clickable-card" onclick="window.location.href='automation.html'" style="cursor:pointer;">
         <div class="service-num">03</div>
         <div class="service-icon"><i class="ti ti-settings-automation" aria-hidden="true"></i></div>
         <div class="service-illustration service-illustration-img" style="background-image:url('img/automation-card.jpg');"></div>
@@ -256,11 +236,11 @@
           <span class="tag">Lab Equipment</span>
           <span class="tag">HMI Design</span>
         </div>
-        <a href="#contact" class="service-link" data-i18n="s3_link">Start a project <i class="ti ti-arrow-right" aria-hidden="true"></i></a>
+        <a href="automation.html" class="service-link" data-i18n="s3_link">Start a project <i class="ti ti-arrow-right" aria-hidden="true"></i></a>
       </div>
 
       <!-- Service 4: IoT -->
-      <div class="service-card fade-up">
+      <div class="service-card fade-up clickable-card" onclick="window.location.href='agricultural-iot.html'" style="cursor:pointer;">
         <div class="service-num">04</div>
         <div class="service-icon"><i class="ti ti-wifi" aria-hidden="true"></i></div>
         <div class="service-illustration service-illustration-img" style="background-image:url('img/agri-card.jpg');"></div>
@@ -272,7 +252,7 @@
           <span class="tag">MQTT / HTTP</span>
           <span class="tag">Solar-Powered</span>
         </div>
-        <a href="#contact" class="service-link" data-i18n="s4_link">Deploy sensors <i class="ti ti-arrow-right" aria-hidden="true"></i></a>
+        <a href="agricultural-iot.html" class="service-link" data-i18n="s4_link">Deploy sensors <i class="ti ti-arrow-right" aria-hidden="true"></i></a>
       </div>
 
     </div>
@@ -505,6 +485,102 @@
   </div>
 </section>
 
+
+<!-- ══════════════════════════════════════════
+     BOOKING SECTION
+══════════════════════════════════════════ -->
+<section id="booking">
+  <div class="container">
+    <span class="section-label fade-up" data-i18n="booking_label">Book with us</span>
+    <h2 class="fade-up" style="margin-bottom:16px;" data-i18n="booking_title">SCHEDULE A<br>SESSION</h2>
+    <p class="fade-up" style="color:var(--grey);font-size:16px;max-width:600px;margin-bottom:48px;" data-i18n="booking_intro">Choose how you'd like to engage with us — a virtual meeting, an on-site consultation, or a technical call-out visit.</p>
+
+    <div class="booking-grid">
+      <!-- Booking type cards -->
+      <div class="booking-types fade-up">
+        <div class="booking-type active" data-type="meeting" onclick="selectBookingType(this,'meeting')">
+          <div class="booking-type-icon"><i class="ti ti-video" aria-hidden="true"></i></div>
+          <div>
+            <h4 data-i18n="bk_meeting_t">Virtual Meeting</h4>
+            <p data-i18n="bk_meeting_d">Online video call to discuss your project remotely.</p>
+          </div>
+        </div>
+        <div class="booking-type" data-type="consultation" onclick="selectBookingType(this,'consultation')">
+          <div class="booking-type-icon"><i class="ti ti-clipboard-text" aria-hidden="true"></i></div>
+          <div>
+            <h4 data-i18n="bk_consult_t">Consultation</h4>
+            <p data-i18n="bk_consult_d">In-depth technical consultation for your requirements.</p>
+          </div>
+        </div>
+        <div class="booking-type" data-type="sitevisit" onclick="selectBookingType(this,'sitevisit')">
+          <div class="booking-type-icon"><i class="ti ti-map-pin-cog" aria-hidden="true"></i></div>
+          <div>
+            <h4 data-i18n="bk_site_t">Site Visit / Call-out</h4>
+            <p data-i18n="bk_site_d">On-site assessment, repair, or installation visit.</p>
+          </div>
+        </div>
+      </div>
+
+      <!-- Booking form -->
+      <form id="booking-form" class="booking-form fade-up" onsubmit="return false;">
+        <input type="hidden" name="bookingType" id="bookingType" value="meeting" />
+        <div class="form-row">
+          <div class="form-group">
+            <label data-i18n="fn_label">First Name</label>
+            <input type="text" name="bk_firstname" required />
+          </div>
+          <div class="form-group">
+            <label data-i18n="ln_label">Last Name</label>
+            <input type="text" name="bk_lastname" required />
+          </div>
+        </div>
+        <div class="form-row">
+          <div class="form-group">
+            <label data-i18n="email_label">Email Address</label>
+            <input type="email" name="bk_email" required />
+          </div>
+          <div class="form-group">
+            <label data-i18n="bk_phone">Phone Number</label>
+            <input type="tel" name="bk_phone" />
+          </div>
+        </div>
+        <div class="form-row">
+          <div class="form-group">
+            <label data-i18n="bk_date">Preferred Date</label>
+            <input type="date" name="bk_date" required />
+          </div>
+          <div class="form-group">
+            <label data-i18n="bk_time">Preferred Time</label>
+            <select name="bk_time" required>
+              <option value="">--:--</option>
+              <option value="08:00">08:00</option>
+              <option value="09:00">09:00</option>
+              <option value="10:00">10:00</option>
+              <option value="11:00">11:00</option>
+              <option value="12:00">12:00</option>
+              <option value="14:00">14:00</option>
+              <option value="15:00">15:00</option>
+              <option value="16:00">16:00</option>
+              <option value="17:00">17:00</option>
+            </select>
+          </div>
+        </div>
+        <div class="form-group" id="address-group" style="display:none;">
+          <label data-i18n="bk_address">Site Address (for visits)</label>
+          <input type="text" name="bk_address" placeholder="Physical address for the site visit" />
+        </div>
+        <div class="form-group">
+          <label data-i18n="bk_notes">Notes</label>
+          <textarea name="bk_notes" rows="3" data-i18n="bk_notes_ph" placeholder="Tell us what you'd like to discuss..."></textarea>
+        </div>
+        <button type="submit" class="btn-primary" data-i18n="bk_submit">Request Booking →</button>
+        <div class="booking-message" style="display:none;font-family:var(--font-mono);font-size:12px;padding:12px 16px;border:1px solid;margin-top:12px;line-height:1.6;"></div>
+        <p class="mono muted" style="font-size:11px;margin-top:8px;" data-i18n="bk_note">We'll confirm your booking by email within 1 business day.</p>
+      </form>
+    </div>
+  </div>
+</section>
+
 <!-- ══════════════════════════════════════════
      CLIENT PORTAL
 ══════════════════════════════════════════ -->
@@ -616,5 +692,6 @@
 <script src="js/main.js"></script>
 <script src="js/form.js"></script>
 <script src="js/welcome.js"></script>
+<script src="js/booking.js"></script>
 </body>
 </html>
