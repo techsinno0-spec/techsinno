@@ -1,6 +1,6 @@
 // ============================================================
-// js/welcome.js — TECHSINNO Welcome Banner + Voice (v9 bulletproof)
-// Self-contained, guarded, independent of other scripts.
+// js/welcome.js — TECHSINNO Welcome Banner + Voice (v10)
+// Fixed: no forced lang, no blocking prime, robust speak.
 // ============================================================
 (function () {
   'use strict';
@@ -19,7 +19,8 @@
           short: "Bem-vindo \u00e0 TECHSINNO. Solu\u00e7\u00f5es de Engenharia para a \u00c1frica do Sul e RDC. Electr\u00f3nica, design PCB, automa\u00e7\u00e3o industrial e IoT agr\u00edcola.",
           btn: "\uD83D\uDD0A OUVIR", speaking: "\u23F9 PARAR", quote: "OR\u00c7AMENTO \u2192" }
   };
-  var VOICE_LANG = { en:'en-GB', fr:'fr-FR', af:'af-ZA', pt:'pt-PT' };
+  // Preferred voice language prefix per UI language (NOT forced on utterance)
+  var VOICE_PREFIX = { en:'en', fr:'fr', af:'af', pt:'pt' };
   var typeTimer = null;
 
   function lang() { return window._currentLang || 'en'; }
@@ -37,6 +38,21 @@
     }, speed || 26);
   }
 
+  function pickVoice(prefix) {
+    var vs = window.speechSynthesis.getVoices();
+    var i;
+    // Exact prefix match (e.g. 'fr')
+    for (i = 0; i < vs.length; i++) {
+      if (vs[i].lang && vs[i].lang.toLowerCase().indexOf(prefix) === 0) return vs[i];
+    }
+    // Fallback: any English
+    for (i = 0; i < vs.length; i++) {
+      if (vs[i].lang && vs[i].lang.toLowerCase().indexOf('en') === 0) return vs[i];
+    }
+    // Last resort: first available
+    return vs.length ? vs[0] : null;
+  }
+
   function speak() {
     var btn = document.getElementById('speak-btn');
     var w = W();
@@ -45,30 +61,32 @@
       return;
     }
     var synth = window.speechSynthesis;
-    if (synth.speaking || synth.pending) {
+
+    // Toggle off if currently speaking
+    if (synth.speaking) {
       synth.cancel();
       if (btn) btn.textContent = w.btn;
       return;
     }
-    try {
-      var u = new SpeechSynthesisUtterance(w.short);
-      u.lang = VOICE_LANG[lang()] || 'en-GB';
-      u.rate = 0.95; u.pitch = 1.0; u.volume = 1.0;
-      var vs = synth.getVoices();
-      var v = null, j;
-      for (j = 0; j < vs.length; j++) { if (vs[j].lang === u.lang) { v = vs[j]; break; } }
-      if (!v) { for (j = 0; j < vs.length; j++) { if (vs[j].lang && vs[j].lang.indexOf(u.lang.split('-')[0]) === 0) { v = vs[j]; break; } } }
-      if (!v) { for (j = 0; j < vs.length; j++) { if (vs[j].lang && vs[j].lang.indexOf('en') === 0) { v = vs[j]; break; } } }
-      if (v) u.voice = v;
-      u.onstart = function () { if (btn) btn.textContent = w.speaking; };
-      u.onend = function () { if (btn) btn.textContent = w.btn; };
-      u.onerror = function () { if (btn) btn.textContent = w.btn; };
-      synth.cancel();
+
+    // Always clear any stuck queue first
+    synth.cancel();
+
+    var u = new SpeechSynthesisUtterance(w.short);
+    // IMPORTANT: do NOT force u.lang — set the voice instead.
+    var v = pickVoice(VOICE_PREFIX[lang()] || 'en');
+    if (v) { u.voice = v; u.lang = v.lang; }
+    u.rate = 0.95; u.pitch = 1.0; u.volume = 1.0;
+
+    u.onstart = function () { if (btn) btn.textContent = w.speaking; };
+    u.onend   = function () { if (btn) btn.textContent = w.btn; };
+    u.onerror = function () { if (btn) btn.textContent = w.btn; };
+
+    // Speak after a tiny delay so cancel() fully clears (Chrome quirk)
+    setTimeout(function () {
       synth.speak(u);
-      setTimeout(function () { if (synth.paused) synth.resume(); }, 200);
-    } catch (e) {
-      if (btn) btn.textContent = w.btn;
-    }
+      setTimeout(function () { if (synth.paused) synth.resume(); }, 150);
+    }, 60);
   }
 
   window.updateWelcomeLang = function (lng) {
@@ -97,9 +115,7 @@
       if (btn) btn.textContent = w.btn;
       if (q) q.textContent = w.quote;
 
-      // Show banner
       setTimeout(function () { banner.classList.add('wb-show'); }, 1200);
-      // Type message
       setTimeout(function () { typeText(w.text, 26); }, 1800);
 
       if (closeBtn) closeBtn.addEventListener('click', function () {
@@ -113,28 +129,12 @@
       });
       if (btn) btn.addEventListener('click', speak);
 
-      // Prime speech engine on first interaction
-      function prime() {
-        try {
-          if ('speechSynthesis' in window) {
-            window.speechSynthesis.getVoices();
-            var u = new SpeechSynthesisUtterance(' ');
-            u.volume = 0;
-            window.speechSynthesis.speak(u);
-          }
-        } catch (e) {}
-        document.removeEventListener('click', prime);
-        document.removeEventListener('touchstart', prime);
-      }
-      document.addEventListener('click', prime, { once: true });
-      document.addEventListener('touchstart', prime, { once: true });
-
+      // Just warm up voices — do NOT speak a blank utterance (that was jamming the queue)
       if ('speechSynthesis' in window) {
         window.speechSynthesis.getVoices();
         window.speechSynthesis.onvoiceschanged = function () { window.speechSynthesis.getVoices(); };
       }
 
-      // Language buttons
       var btns = document.querySelectorAll('.lang-btn');
       for (var k = 0; k < btns.length; k++) {
         (function (b) {
@@ -144,7 +144,6 @@
         })(btns[k]);
       }
     } catch (e) {
-      // Even if something fails, force-show the banner
       var b2 = document.getElementById('welcome-banner');
       if (b2) b2.classList.add('wb-show');
     }
