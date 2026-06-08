@@ -37,6 +37,7 @@
         <button class="lang-btn active" data-lang="en">EN</button>
         <button class="lang-btn"        data-lang="fr">FR</button>
         <button class="lang-btn"        data-lang="af">AF</button>
+        <button class="lang-btn"        data-lang="pt">PT</button>
       </div>
       <div class="nav-toggle" id="nav-toggle" aria-label="Toggle menu">
         <span></span><span></span><span></span>
@@ -99,22 +100,6 @@
             <span class="panel-key">COVERAGE</span>
             <span class="panel-val white">SA + DRC</span>
           </div>
-          <div class="panel-row">
-            <span class="panel-key">REG NO</span>
-            <span class="panel-val white">2022/364165/07</span>
-          </div>
-          <div class="panel-row">
-            <span class="panel-key">CLOUD</span>
-            <span class="panel-val"><span class="status-dot"></span>AZURE CONNECTED</span>
-          </div>
-          <div class="panel-row">
-            <span class="panel-key">IOT NODES</span>
-            <span class="panel-val"><span class="status-dot"></span>LIVE</span>
-          </div>
-          <div class="panel-row">
-            <span class="panel-key">AVAILABILITY</span>
-            <span class="panel-val white">EVENINGS + WEEKENDS</span>
-          </div>
         </div>
       </div>
 
@@ -131,8 +116,12 @@
         <div class="hero-stat-label mono" data-i18n="stat2">COUNTRIES</div>
       </div>
       <div class="hero-stat fade-up">
-        <div class="hero-stat-num accent">3</div>
+        <div class="hero-stat-num accent">4</div>
         <div class="hero-stat-label mono" data-i18n="stat3">SERVICE LINES</div>
+      </div>
+      <div class="hero-stat fade-up">
+        <div class="hero-stat-num accent">3</div>
+        <div class="hero-stat-label mono" data-i18n="stat4">LANGUAGES</div>
       </div>
     </div>
 
@@ -154,49 +143,67 @@
 
     <div class="services-grid">
 
-      <!-- Service 1: Repair -->
+      <!-- Service 1: Electronics -->
       <div class="service-card fade-up">
         <div class="service-num">01</div>
-        <div class="service-icon"><i class="ti ti-cpu" aria-hidden="true"></i></div>
-        <h3 data-i18n="s1_title">B2B ELECTRONICS<br>REPAIR</h3>
-        <p data-i18n="s1_desc">PCB-level fault finding, component replacement, and functional testing for industrial and commercial electronics.</p>
+        <div class="service-icon"><i class="ti ti-circuit-board" aria-hidden="true"></i></div>
+        <h3 data-i18n="s1_title">ELECTRONICS<br>ENGINEERING</h3>
+        <p data-i18n="s1_desc">Full-cycle electronics services — from consultation and design to build, installation, maintenance, and PCB-level repair.</p>
         <div class="service-tags">
+          <span class="tag">Consultation</span>
+          <span class="tag">Design & Build</span>
           <span class="tag">PCB Repair</span>
-          <span class="tag">Fault Diagnosis</span>
-          <span class="tag">Component-Level</span>
           <span class="tag">SMD Rework</span>
+          <span class="tag">Installation</span>
+          <span class="tag">Maintenance</span>
         </div>
-        <a href="#contact" class="service-link" data-i18n="s1_link">Request repair <i class="ti ti-arrow-right" aria-hidden="true"></i></a>
+        <a href="#contact" class="service-link" data-i18n="s1_link">Get started <i class="ti ti-arrow-right" aria-hidden="true"></i></a>
       </div>
 
-      <!-- Service 2: Automation -->
+      <!-- Service 2: Repair -->
       <div class="service-card fade-up">
         <div class="service-num">02</div>
-        <div class="service-icon"><i class="ti ti-settings-automation" aria-hidden="true"></i></div>
-        <h3 data-i18n="s2_title">INDUSTRIAL<br>AUTOMATION</h3>
-        <p data-i18n="s2_desc">PLC programming, SCADA integration, and automated control systems for manufacturing and process plants.</p>
+        <div class="service-icon"><i class="ti ti-cpu" aria-hidden="true"></i></div>
+        <h3 data-i18n="s2_title">B2B ELECTRONICS<br>REPAIR</h3>
+        <p data-i18n="s2_desc">PCB-level fault finding, component replacement, and functional testing for industrial and commercial electronics.</p>
         <div class="service-tags">
-          <span class="tag">PLC / SCADA</span>
-          <span class="tag">Siemens / Omron</span>
-          <span class="tag">Modbus / MQTT</span>
-          <span class="tag">HMI Design</span>
+          <span class="tag">Fault Diagnosis</span>
+          <span class="tag">Component-Level</span>
+          <span class="tag">Industrial</span>
+          <span class="tag">Commercial</span>
         </div>
-        <a href="#contact" class="service-link" data-i18n="s2_link">Start a project <i class="ti ti-arrow-right" aria-hidden="true"></i></a>
+        <a href="#contact" class="service-link" data-i18n="s2_link">Request repair <i class="ti ti-arrow-right" aria-hidden="true"></i></a>
       </div>
 
-      <!-- Service 3: IoT -->
+      <!-- Service 3: Automation -->
       <div class="service-card fade-up">
         <div class="service-num">03</div>
+        <div class="service-icon"><i class="ti ti-settings-automation" aria-hidden="true"></i></div>
+        <h3 data-i18n="s3_title">INDUSTRIAL<br>AUTOMATION</h3>
+        <p data-i18n="s3_desc">PLC programming, SCADA integration, plant & machinery maintenance, lab equipment servicing, and automated control systems.</p>
+        <div class="service-tags">
+          <span class="tag">PLC / SCADA</span>
+          <span class="tag">Plant Maintenance</span>
+          <span class="tag">Machinery Repair</span>
+          <span class="tag">Lab Equipment</span>
+          <span class="tag">HMI Design</span>
+        </div>
+        <a href="#contact" class="service-link" data-i18n="s3_link">Start a project <i class="ti ti-arrow-right" aria-hidden="true"></i></a>
+      </div>
+
+      <!-- Service 4: IoT -->
+      <div class="service-card fade-up">
+        <div class="service-num">04</div>
         <div class="service-icon"><i class="ti ti-wifi" aria-hidden="true"></i></div>
-        <h3 data-i18n="s3_title">AGRICULTURAL<br>IoT</h3>
-        <p data-i18n="s3_desc">End-to-end sensor networks for farms — soil, climate, irrigation — with cloud dashboards and real-time alerts.</p>
+        <h3 data-i18n="s4_title">AGRICULTURAL<br>IoT</h3>
+        <p data-i18n="s4_desc">End-to-end sensor networks for farms — soil, climate, irrigation — with cloud dashboards and real-time alerts.</p>
         <div class="service-tags">
           <span class="tag">ESP32 / Arduino</span>
           <span class="tag">Azure IoT Hub</span>
           <span class="tag">MQTT / HTTP</span>
           <span class="tag">Solar-Powered</span>
         </div>
-        <a href="#contact" class="service-link" data-i18n="s3_link">Deploy sensors <i class="ti ti-arrow-right" aria-hidden="true"></i></a>
+        <a href="#contact" class="service-link" data-i18n="s4_link">Deploy sensors <i class="ti ti-arrow-right" aria-hidden="true"></i></a>
       </div>
 
     </div>
@@ -411,6 +418,7 @@
             <option value="" data-i18n-option="svc_opt0">Select a service</option>
             <option value="repair"     data-i18n-option="svc_opt1">Electronics Repair</option>
             <option value="automation" data-i18n-option="svc_opt2">Industrial Automation</option>
+            <option value="electronics" data-i18n-option="svc_opt1b">Electronics Engineering</option>
             <option value="iot"        data-i18n-option="svc_opt3">Agricultural IoT</option>
             <option value="other"      data-i18n-option="svc_opt4">Other / Consultation</option>
           </select>
