@@ -26,16 +26,16 @@ const T = {
     services_label: 'What we do',
     services_title: 'THREE CORE\nSERVICES',
     services_desc: 'End-to-end engineering solutions — from component-level repair to cloud-connected agricultural sensors.',
-    s2_title: 'B2B ELECTRONICS\nREPAIR',
-    s2_desc: 'PCB-level fault finding, component replacement, and functional testing for industrial and commercial electronics.',
-    s2_link: 'Request repair',
+    s2_title: 'PCB DESIGN &\nENGINEERING',
+    s2_desc: 'Professional PCB design — schematic capture, PCB layout, DRC/ERC checks, and manufacturing-ready Gerber file output.',
+    s2_link: 'Start design',
     s3_title: 'INDUSTRIAL\nAUTOMATION',
     s3_desc: 'PLC programming, SCADA integration, plant & machinery maintenance, lab equipment servicing, and automated control systems.',
     s3_link: 'Start a project',
     s3_title: 'AGRICULTURAL\nIoT',
     s3_desc: 'End-to-end sensor networks for farms — soil, climate, irrigation — with cloud dashboards and real-time alerts.',
     s1_title: 'ELECTRONICS\nENGINEERING',
-    s1_desc: 'Full-cycle electronics services — consultation, design, build, installation, maintenance, and PCB-level repair.',
+    s1_desc: 'Full-cycle electronics services — consultation, design, build, installation, maintenance, and B2B repair of industrial and commercial electronics.',
     s1_link: 'Get started',
     s4_title: 'AGRICULTURAL\nIoT',
     s4_desc: 'End-to-end sensor networks for farms — soil, climate, irrigation — with cloud dashboards and real-time alerts.',
@@ -229,9 +229,9 @@ const T = {
     s1_title: 'ENGENHARIA\nELECTRÓNICA',
     s1_desc: 'Serviços electrónicos completos — consulta, design, construção, instalação, manutenção e reparação ao nível PCB.',
     s1_link: 'Começar',
-    s2_title: 'REPARAÇÃO\nELECTRÓNICA B2B',
-    s2_desc: 'Diagnóstico de falhas ao nível PCB, substituição de componentes e testes funcionais para electrónica industrial e comercial.',
-    s2_link: 'Pedir reparação',
+    s2_title: 'DESIGN\nPCB',
+    s2_desc: 'Design PCB profissional — captura de esquemas, layout PCB, verificações DRC/ERC e ficheiros Gerber prontos para fabrico.',
+    s2_link: 'Iniciar design',
     s3_title: 'AUTOMAÇÃO\nINDUSTRIAL',
     s3_desc: 'Programação PLC, integração SCADA, manutenção de fábricas e máquinas, serviço de equipamentos de laboratório.',
     s3_link: 'Iniciar projecto',
@@ -414,6 +414,7 @@ let isDeleting = false;
 // ── Apply translations ───────────────────────────────────────
 function applyLang(lang) {
   currentLang = lang;
+  window._currentLang = lang;
   const t = T[lang];
   // Map nav array to individual keys
   ['nav_0','nav_1','nav_2','nav_3','nav_4'].forEach((k,i)=>{t[k]=t.nav[i];});
