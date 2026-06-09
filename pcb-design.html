@@ -4,144 +4,109 @@
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
   <title>PCB Design & Engineering — TECHSINNO</title>
-  <meta name="description" content="Professional PCB design — schematic capture, PCB layout, DRC/ERC, and manufacturing-ready Gerber output. TECHSINNO." />
+  <meta name="description" content="Professional PCB design — schematic capture, layout, DRC/ERC, Gerber output. TECHSINNO." />
   <link rel="icon" type="image/png" href="img/logo.png" />
   <link rel="stylesheet" href="css/service-page.css" />
   <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/@tabler/icons-webfont@latest/tabler-icons.min.css" />
 </head>
-<body>
+<body data-sp-page="pcb-design">
 
 <nav id="navbar">
   <div class="nav-inner">
     <a href="index.html" class="nav-logo"><img src="img/logo.png" alt="TECHSINNO" /></a>
-    <a href="index.html" class="nav-back"><i class="ti ti-arrow-left"></i> Back to Home</a>
+    <div style="display:flex;align-items:center;gap:16px;">
+      <div class="sp-lang-switch">
+        <button class="sp-lang-btn" data-lang="en" data-tooltip="English" title="English">EN</button>
+        <button class="sp-lang-btn" data-lang="fr" data-tooltip="Français" title="Français">FR</button>
+        <button class="sp-lang-btn" data-lang="af" data-tooltip="Afrikaans" title="Afrikaans">AF</button>
+        <button class="sp-lang-btn" data-lang="pt" data-tooltip="Português" title="Português">PT</button>
+      </div>
+      <a href="index.html" class="nav-back" data-sp="back"><i class="ti ti-arrow-left"></i> <span data-sp="back">Back to Home</span></a>
+    </div>
   </div>
 </nav>
 
-<!-- Hero -->
 <section class="sp-hero">
   <div class="sp-hero-bg" style="background-image:url('img/pcb-card.jpg');"></div>
   <div class="sp-hero-overlay"></div>
   <div class="container">
-    <div class="sp-breadcrumb"><a href="index.html">HOME</a> / <a href="index.html#services">SERVICES</a> / PCB DESIGN & ENGINEERING</div>
-    <h1>PCB DESIGN & <span class="accent">ENGINEERING</span></h1>
-    <p>Professional printed circuit board design — from schematic capture to manufacturing-ready files, built to industry standards.</p>
+    <div class="sp-breadcrumb"><a href="index.html" data-sp="bc_home">HOME</a> / <a href="index.html#services" data-sp="bc_services">SERVICES</a> / <span data-sp="bc_this">PCB DESIGN & ENGINEERING</span></div>
+    <h1><span data-sp="h1a">PCB DESIGN &</span> <span class="accent" data-sp="h1b">ENGINEERING</span></h1>
+    <p data-sp="hero_p">Professional printed circuit board design — from schematic capture to manufacturing-ready files, built to industry standards.</p>
   </div>
 </section>
 
-<!-- Overview -->
 <section class="sp-section">
   <div class="container">
-    <div class="sp-label">Overview</div>
-    <h2>Manufacturing-ready PCBs, designed right</h2>
-    <p>TECHSINNO provides <strong>end-to-end PCB design services</strong> — we take your circuit from schematic through layout to a complete manufacturing package. Whether it's a simple 2-layer board or a complex multi-layer design, we deliver clean, verified, production-ready files.</p>
-    <p>Every design goes through rigorous <strong>design rule checks (DRC)</strong> and <strong>electrical rule checks (ERC)</strong> before release, minimising costly manufacturing errors. We output industry-standard Gerber and drill files compatible with any PCB fabricator.</p>
+    <div class="sp-label" data-sp="ov_label">Overview</div>
+    <h2 data-sp="ov_h">Manufacturing-ready PCBs, designed right</h2>
+    <p data-sp="ov_p1">TECHSINNO provides end-to-end PCB design services — we take your circuit from schematic through layout to a complete manufacturing package. Whether it's a simple 2-layer board or a complex multi-layer design, we deliver clean, verified, production-ready files.</p>
+    <p data-sp="ov_p2">Every design goes through rigorous design rule checks (DRC) and electrical rule checks (ERC) before release, minimising costly manufacturing errors. We output industry-standard Gerber and drill files compatible with any PCB fabricator.</p>
   </div>
 </section>
 
-<!-- What we offer -->
 <section class="sp-section alt">
   <div class="container">
-    <div class="sp-label">What we offer</div>
-    <h2>Our PCB Design Services</h2>
+    <div class="sp-label" data-sp="of_label">What we offer</div>
+    <h2 data-sp="of_h">Our PCB Design Services</h2>
     <div class="sp-features">
-      <div class="sp-feature">
-        <div class="sp-feature-icon"><i class="ti ti-schema"></i></div>
-        <h4>Schematic Capture</h4>
-        <p>Clean, well-organised schematics with proper annotation and net labelling.</p>
-      </div>
-      <div class="sp-feature">
-        <div class="sp-feature-icon"><i class="ti ti-layout-grid"></i></div>
-        <h4>PCB Layout</h4>
-        <p>Optimised component placement and routing for signal integrity and manufacturability.</p>
-      </div>
-      <div class="sp-feature">
-        <div class="sp-feature-icon"><i class="ti ti-checkup"></i></div>
-        <h4>DRC / ERC Checks</h4>
-        <p>Design and electrical rule verification to catch errors before manufacturing.</p>
-      </div>
-      <div class="sp-feature">
-        <div class="sp-feature-icon"><i class="ti ti-file-export"></i></div>
-        <h4>Gerber Output</h4>
-        <p>Complete manufacturing package — Gerbers, drill files, BOM, and pick-and-place.</p>
-      </div>
-      <div class="sp-feature">
-        <div class="sp-feature-icon"><i class="ti ti-stack-2"></i></div>
-        <h4>Multi-layer Design</h4>
-        <p>2, 4, or more layers with proper stackup and impedance control.</p>
-      </div>
-      <div class="sp-feature">
-        <div class="sp-feature-icon"><i class="ti ti-ruler"></i></div>
-        <h4>Design for Manufacture</h4>
-        <p>Layouts optimised to reduce cost and improve yield at the fabricator.</p>
-      </div>
+      <div class="sp-feature"><div class="sp-feature-icon"><i class="ti ti-schema"></i></div><h4 data-sp="f1t">Schematic Capture</h4><p data-sp="f1d">Clean, well-organised schematics with proper annotation and net labelling.</p></div>
+      <div class="sp-feature"><div class="sp-feature-icon"><i class="ti ti-layout-grid"></i></div><h4 data-sp="f2t">PCB Layout</h4><p data-sp="f2d">Optimised component placement and routing for signal integrity and manufacturability.</p></div>
+      <div class="sp-feature"><div class="sp-feature-icon"><i class="ti ti-checkup"></i></div><h4 data-sp="f3t">DRC / ERC Checks</h4><p data-sp="f3d">Design and electrical rule verification to catch errors before manufacturing.</p></div>
+      <div class="sp-feature"><div class="sp-feature-icon"><i class="ti ti-file-export"></i></div><h4 data-sp="f4t">Gerber Output</h4><p data-sp="f4d">Complete manufacturing package — Gerbers, drill files, BOM, and pick-and-place.</p></div>
+      <div class="sp-feature"><div class="sp-feature-icon"><i class="ti ti-stack-2"></i></div><h4 data-sp="f5t">Multi-layer Design</h4><p data-sp="f5d">2, 4, or more layers with proper stackup and impedance control.</p></div>
+      <div class="sp-feature"><div class="sp-feature-icon"><i class="ti ti-ruler"></i></div><h4 data-sp="f6t">Design for Manufacture</h4><p data-sp="f6d">Layouts optimised to reduce cost and improve yield at the fabricator.</p></div>
     </div>
   </div>
 </section>
 
-<!-- Process -->
 <section class="sp-section">
   <div class="container">
-    <div class="sp-label">How it works</div>
-    <h2>Our Process</h2>
+    <div class="sp-label" data-sp="pr_label">How it works</div>
+    <h2 data-sp="pr_h">Our Process</h2>
     <div class="sp-steps">
-      <div class="sp-step">
-        <div class="sp-step-num">●</div>
-        <div class="sp-step-content"><h4>Requirements</h4><p>We define your circuit's electrical and physical requirements together.</p></div>
-      </div>
-      <div class="sp-step">
-        <div class="sp-step-num">●</div>
-        <div class="sp-step-content"><h4>Schematic</h4><p>We capture the schematic, select components, and run electrical rule checks.</p></div>
-      </div>
-      <div class="sp-step">
-        <div class="sp-step-num">●</div>
-        <div class="sp-step-content"><h4>Layout & Route</h4><p>We place components and route the board for performance and manufacturability.</p></div>
-      </div>
-      <div class="sp-step">
-        <div class="sp-step-num">●</div>
-        <div class="sp-step-content"><h4>Verify & Deliver</h4><p>We run DRC, generate Gerbers, and hand over a complete manufacturing package.</p></div>
-      </div>
+      <div class="sp-step"><div class="sp-step-num">●</div><div class="sp-step-content"><h4 data-sp="s1t">Requirements</h4><p data-sp="s1d">We define your circuit's electrical and physical requirements together.</p></div></div>
+      <div class="sp-step"><div class="sp-step-num">●</div><div class="sp-step-content"><h4 data-sp="s2t">Schematic</h4><p data-sp="s2d">We capture the schematic, select components, and run electrical rule checks.</p></div></div>
+      <div class="sp-step"><div class="sp-step-num">●</div><div class="sp-step-content"><h4 data-sp="s3t">Layout & Route</h4><p data-sp="s3d">We place components and route the board for performance and manufacturability.</p></div></div>
+      <div class="sp-step"><div class="sp-step-num">●</div><div class="sp-step-content"><h4 data-sp="s4t">Verify & Deliver</h4><p data-sp="s4d">We run DRC, generate Gerbers, and hand over a complete manufacturing package.</p></div></div>
     </div>
   </div>
 </section>
 
-<!-- Capabilities checklist -->
 <section class="sp-section alt">
   <div class="container">
-    <div class="sp-label">Capabilities</div>
-    <h2>What We Work With</h2>
+    <div class="sp-label" data-sp="cap_label">Capabilities</div>
+    <h2 data-sp="cap_h">What We Work With</h2>
     <ul class="sp-checklist">
-      <li>KiCad, Altium Designer & CircuitStudio</li>
-      <li>2 to multi-layer boards</li>
-      <li>Impedance-controlled routing</li>
-      <li>Surface-mount & through-hole</li>
-      <li>BOM & assembly drawings</li>
-      <li>Gerber & ODB++ output</li>
-      <li>Design for manufacture (DFM)</li>
-      <li>Component sourcing guidance</li>
+      <li data-sp="c1">KiCad, Altium Designer & CircuitStudio</li>
+      <li data-sp="c2">2 to multi-layer boards</li>
+      <li data-sp="c3">Impedance-controlled routing</li>
+      <li data-sp="c4">Surface-mount & through-hole</li>
+      <li data-sp="c5">BOM & assembly drawings</li>
+      <li data-sp="c6">Gerber & ODB++ output</li>
+      <li data-sp="c7">Design for manufacture (DFM)</li>
+      <li data-sp="c8">Component sourcing guidance</li>
     </ul>
   </div>
 </section>
 
-<!-- Suggestion -->
 <section class="sp-section">
   <div class="container">
     <div class="sp-suggestion">
-      <p class="mono">// TECHSINNO RECOMMENDS</p>
-      <h3>Have an existing design that needs fixing?</h3>
-      <p>We also review and improve existing PCB designs — fixing signal integrity issues, reducing manufacturing cost, or adapting boards for new requirements. Send us your files and we'll tell you what can be improved.</p>
+      <p class="mono" data-sp="sug_label">// TECHSINNO RECOMMENDS</p>
+      <h3 data-sp="sug_h">Have an existing design that needs fixing?</h3>
+      <p data-sp="sug_p">We also review and improve existing PCB designs — fixing signal integrity issues, reducing manufacturing cost, or adapting boards for new requirements. Send us your files and we'll tell you what can be improved.</p>
     </div>
   </div>
 </section>
 
-<!-- CTA -->
 <section class="sp-cta">
   <div class="container">
-    <h2>Ready to design your board?</h2>
-    <p>Share your circuit requirements and we'll prepare a PCB design quote or book a technical discussion.</p>
+    <h2 data-sp="cta_h">Ready to design your board?</h2>
+    <p data-sp="cta_p">Share your circuit requirements and we'll prepare a PCB design quote or book a technical discussion.</p>
     <div class="sp-cta-btns">
-      <a href="index.html#contact" class="btn-primary">Request a Quote →</a>
-      <a href="index.html#booking" class="btn-outline">Book a Session</a>
+      <a href="index.html#contact" class="btn-primary" data-sp="cta_quote">Request a Quote →</a>
+      <a href="index.html#booking" class="btn-outline" data-sp="cta_book">Book a Session</a>
     </div>
   </div>
 </section>
@@ -153,5 +118,6 @@
   </div>
 </footer>
 
+<script src="js/service-i18n.js"></script>
 </body>
 </html>
