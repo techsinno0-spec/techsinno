@@ -492,6 +492,7 @@ let isDeleting = false;
 function applyLang(lang) {
   currentLang = lang;
   window._currentLang = lang;
+  try { localStorage.setItem('techsinno_lang', lang); } catch(e) {}
   const t = T[lang];
   ['nav_0','nav_1','nav_2','nav_3','nav_4'].forEach((k,i) => { t[k] = t.nav[i]; });
 
@@ -607,7 +608,11 @@ function initForm() {
 
 // ── Init ─────────────────────────────────────────────────────
 document.addEventListener('DOMContentLoaded', () => {
-  applyLang('en');
+  // Load saved language (persists across pages & visits), default to English
+  var savedLang = 'en';
+  try { savedLang = localStorage.getItem('techsinno_lang') || 'en'; } catch(e) {}
+  if (!T[savedLang]) savedLang = 'en';
+  applyLang(savedLang);
   setTimeout(typewriter, 800);
   updateClock();
   setInterval(updateClock, 1000);
