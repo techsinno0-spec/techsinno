@@ -86,7 +86,7 @@ section { position: relative; z-index: 2; }
   height: 64px; padding: 0 24px; max-width: 1200px; margin: 0 auto;
 }
 
-.nav-logo img { height: 48px; width: auto; filter: none; transition: transform 0.3s; }
+.nav-logo img { height: 68px; width: auto; filter: none; transition: transform 0.3s; }
 .nav-logo img:hover { transform: scale(1.05); }
 
 .nav-links { display: flex; align-items: center; gap: 24px; list-style: none; }
@@ -248,12 +248,12 @@ section { position: relative; z-index: 2; }
 }
 .services-header p { color: var(--grey); font-size: 16px; line-height: 1.7; }
 
-.services-grid { display: grid; grid-template-columns: repeat(4, 1fr); gap: 20px; }
+.services-grid { display: grid; grid-template-columns: repeat(4, 1fr); gap: 24px; }
 
 .service-card {
-  background: var(--white); border-radius: 16px; padding: 28px 22px;
+  background: var(--white); border-radius: 18px; padding: 0 0 26px;
   border: 1px solid var(--grey3); box-shadow: var(--shadow);
-  position: relative; overflow: hidden; transition: all 0.3s;
+  position: relative; overflow: hidden; transition: all 0.35s cubic-bezier(0.2,0.8,0.2,1);
 }
 .service-card::before {
   content: ''; position: absolute; top: 0; left: 0;
@@ -262,25 +262,28 @@ section { position: relative; z-index: 2; }
   transition: width 0.4s; border-radius: 16px 16px 0 0;
 }
 .service-card:hover::before { width: 100%; }
-.service-card:hover { transform: translateY(-6px); box-shadow: var(--shadow2); border-color: var(--green); }
+.service-card:hover { transform: translateY(-10px); box-shadow: 0 24px 48px rgba(10,22,40,0.18); border-color: var(--green); }
 
 .service-num {
-  font-family: var(--font-display); font-size: 64px; color: var(--bg2);
-  position: absolute; top: 8px; right: 12px; line-height: 1;
+  font-family: var(--font-display); font-size: 48px; color: rgba(255,255,255,0.85);
+  position: absolute; top: 10px; right: 16px; line-height: 1; z-index: 3;
+  text-shadow: 0 2px 8px rgba(0,0,0,0.3);
 }
 
 .service-icon {
-  width: 48px; height: 48px; border-radius: 12px;
-  background: var(--green4); border: 1px solid var(--green3);
+  width: 56px; height: 56px; border-radius: 14px;
+  background: var(--white); border: 1px solid var(--green3);
   display: flex; align-items: center; justify-content: center;
-  font-size: 22px; margin-bottom: 16px; color: var(--green); transition: all 0.3s;
+  font-size: 26px; color: var(--green); transition: all 0.3s;
+  position: absolute; top: 156px; left: 24px; z-index: 3;
+  box-shadow: 0 6px 16px rgba(10,22,40,0.18);
 }
 .service-card:hover .service-icon { background: var(--green); color: var(--white); }
 
-.service-card h3 { font-size: 22px; margin-bottom: 10px; color: var(--navy); }
-.service-card p { color: var(--grey); font-size: 13px; line-height: 1.7; margin-bottom: 16px; }
+.service-card h3 { font-size: 26px; margin: 28px 0 12px; color: var(--navy); letter-spacing: 0.5px; line-height: 1.05; padding: 0 24px; }
+.service-card p { color: var(--grey); font-size: 14px; line-height: 1.7; margin-bottom: 18px; padding: 0 24px; }
 
-.service-tags { display: flex; flex-wrap: wrap; gap: 5px; margin-bottom: 20px; }
+.service-tags { display: flex; flex-wrap: wrap; gap: 5px; margin-bottom: 22px; padding: 0 24px; }
 .tag {
   font-family: var(--font-mono); font-size: 9px; padding: 3px 8px;
   border-radius: 20px; background: var(--bg2); color: var(--navy3);
@@ -289,9 +292,10 @@ section { position: relative; z-index: 2; }
 .service-card:hover .tag { background: var(--green4); border-color: var(--green); color: var(--green); }
 
 .service-link {
-  font-family: var(--font-mono); font-size: 11px; color: var(--green);
+  font-family: var(--font-mono); font-size: 12px; color: var(--green);
   text-decoration: none; letter-spacing: 2px; text-transform: uppercase;
   display: flex; align-items: center; gap: 8px; transition: gap 0.2s; font-weight: 600;
+  padding: 0 24px;
 }
 .service-link:hover { gap: 14px; }
 
@@ -467,17 +471,16 @@ footer { background: var(--navy); padding: 56px 0 24px; position: relative; z-in
 /* Service card illustrations */
 .service-illustration {
   width: 100%;
-  height: 90px;
-  margin-bottom: 16px;
-  border-radius: 8px;
+  height: 180px;
+  margin-bottom: 22px;
+  border-radius: 0;
   background: rgba(0,204,68,0.07);
-  border: 1px solid rgba(0,204,68,0.13);
   overflow: hidden;
   display: flex;
   align-items: center;
   justify-content: center;
-  padding: 8px;
-  transition: all 0.3s;
+  padding: 0;
+  transition: all 0.4s;
 }
 .service-card:hover .service-illustration {
   background: rgba(0,204,68,0.12);
@@ -492,7 +495,19 @@ footer { background: var(--navy); padding: 56px 0 24px; position: relative; z-in
   background-size: cover;
   background-position: center;
   padding: 0;
-  border: 1px solid rgba(0,204,68,0.4);
+  border: none;
+  transform: scale(1.0);
+}
+.service-card:hover .service-illustration-img {
+  transform: scale(1.08);
+}
+/* Dark gradient overlay on image bottom for depth */
+.service-illustration-img::after {
+  content: '';
+  position: absolute;
+  left: 0; right: 0; bottom: 0;
+  height: 50%;
+  background: linear-gradient(to top, rgba(10,22,40,0.35), transparent);
 }
 
 
@@ -805,6 +820,36 @@ footer { background: var(--navy); padding: 56px 0 24px; position: relative; z-in
 }
 #wb-quote:hover { color: #00ff55; }
 
+
+/* ── Client Login nav button ── */
+.nav-links a.nav-login {
+  background: var(--green);
+  color: #fff !important;
+  padding: 8px 18px;
+  border-radius: 6px;
+  font-weight: 600;
+  transition: all 0.2s;
+}
+.nav-links a.nav-login:hover {
+  background: var(--navy);
+  transform: translateY(-1px);
+}
+.nav-links a.nav-login::after { display: none; }
+
+
+/* ── Enhanced presence/flag cards ── */
+.country-card {
+  position: relative;
+  overflow: hidden;
+}
+.country-flag {
+  font-size: 56px;
+  line-height: 1;
+  display: block;
+  margin-bottom: 12px;
+  filter: drop-shadow(0 2px 8px rgba(0,0,0,0.15));
+}
+
 /* ── ANIMATIONS ── */
 .fade-up { opacity: 0; transform: translateY(30px); transition: opacity 0.7s ease, transform 0.7s ease; }
 .fade-up.visible { opacity: 1; transform: translateY(0); }
@@ -847,3 +892,126 @@ footer { background: var(--navy); padding: 56px 0 24px; position: relative; z-in
   padding: 12px 0; border-bottom: 1px solid var(--grey3); transition: color 0.2s;
 }
 .mobile-nav a:hover { color: var(--green); }
+
+/* ══════════════════════════════════════════
+   #6 CONNECT ZONE — Contact + Booking side by side
+══════════════════════════════════════════ */
+@media (min-width: 1024px) {
+  section.connect-half {
+    display: inline-block;
+    width: 50%;
+    vertical-align: top;
+    box-sizing: border-box;
+  }
+  /* Vertical divider line between the two */
+  section#contact.connect-half {
+    border-right: 1px solid var(--grey3);
+  }
+  section.connect-half .container {
+    padding-left: 5%;
+    padding-right: 5%;
+  }
+  /* Stack the contact info + form vertically within each half (since narrower now) */
+  section#contact.connect-half .contact-grid {
+    grid-template-columns: 1fr;
+    gap: 32px;
+  }
+  section#booking.connect-half .booking-grid {
+    grid-template-columns: 1fr;
+  }
+}
+
+/* ══════════════════════════════════════════
+   LIVE IOT DASHBOARD (on agricultural-iot page)
+══════════════════════════════════════════ */
+.iot-demo-dashboard {
+  background: linear-gradient(135deg, #0a1628 0%, #1a2e4a 100%);
+  border-radius: 16px;
+  padding: 28px;
+  margin-top: 32px;
+  box-shadow: 0 20px 48px rgba(10,22,40,0.25);
+  border: 1px solid rgba(0,204,68,0.2);
+}
+.iot-demo-dashboard .dash-header {
+  display: flex; justify-content: space-between; align-items: center;
+  padding-bottom: 18px; margin-bottom: 22px;
+  border-bottom: 1px solid rgba(255,255,255,0.1);
+}
+.iot-demo-dashboard .dash-title {
+  color: #00ff55; font-size: 13px; letter-spacing: 1.5px; display: flex; align-items: center; gap: 8px;
+}
+.iot-demo-dashboard .status-dot {
+  width: 8px; height: 8px; border-radius: 50%; background: #00ff55;
+  display: inline-block; animation: pulse-dot 1.5s infinite;
+}
+@keyframes pulse-dot { 0%,100% { opacity: 1; } 50% { opacity: 0.3; } }
+.iot-demo-dashboard .dash-time { color: rgba(255,255,255,0.6); font-size: 13px; }
+.iot-demo-dashboard .dash-nodes {
+  display: grid; grid-template-columns: repeat(4, 1fr); gap: 16px;
+}
+.iot-demo-dashboard .node-card {
+  background: rgba(255,255,255,0.05); border: 1px solid rgba(255,255,255,0.1);
+  border-radius: 12px; padding: 18px;
+}
+.iot-demo-dashboard .node-name {
+  color: rgba(255,255,255,0.6); font-size: 10px; letter-spacing: 1px;
+  display: flex; align-items: center; gap: 6px; margin-bottom: 12px;
+}
+.iot-demo-dashboard .node-val {
+  color: #fff; font-size: 32px; font-family: var(--font-display); line-height: 1;
+}
+.iot-demo-dashboard .node-unit { color: #00ff55; font-size: 11px; margin-top: 6px; }
+@media (max-width: 700px) {
+  .iot-demo-dashboard .dash-nodes { grid-template-columns: repeat(2, 1fr); }
+}
+
+/* ══════════════════════════════════════════
+   PROCESS PAGE — step list
+══════════════════════════════════════════ */
+.proc-steps { display: flex; flex-direction: column; gap: 0; }
+.proc-step {
+  display: flex; gap: 28px; padding: 32px 0;
+  border-bottom: 1px solid var(--grey3);
+}
+.proc-step:last-child { border-bottom: none; }
+.proc-step-left {
+  display: flex; flex-direction: column; align-items: center; gap: 12px; flex-shrink: 0;
+}
+.proc-step-icon {
+  width: 64px; height: 64px; border-radius: 16px;
+  background: var(--green4); border: 1px solid var(--green3);
+  display: flex; align-items: center; justify-content: center;
+  font-size: 30px; color: var(--green);
+}
+.proc-step-num {
+  font-family: var(--font-display); font-size: 28px; color: var(--grey3);
+}
+.proc-step-body h3 { font-size: 24px; color: var(--navy); margin-bottom: 10px; }
+.proc-step-body p { color: var(--grey); font-size: 15px; line-height: 1.8; max-width: 760px; }
+@media (max-width: 600px) {
+  .proc-step { flex-direction: column; gap: 16px; }
+  .proc-step-left { flex-direction: row; }
+}
+
+/* ══════════════════════════════════════════
+   PORTAL PAGE — login box
+══════════════════════════════════════════ */
+.portal-hero { min-height: 320px; }
+.portal-login-box {
+  max-width: 440px; margin: 0 auto;
+  background: var(--white); border: 1px solid var(--grey3);
+  border-radius: 18px; padding: 40px; box-shadow: var(--shadow2);
+}
+.portal-login-label { color: var(--green); font-size: 11px; letter-spacing: 1px; margin-bottom: 10px; }
+.portal-login-box h3 { font-size: 24px; color: var(--navy); margin-bottom: 24px; }
+.portal-login-box .form-group { margin-bottom: 18px; }
+.portal-login-box label {
+  display: block; font-family: var(--font-mono); font-size: 11px;
+  color: var(--navy3); letter-spacing: 1px; text-transform: uppercase; margin-bottom: 6px;
+}
+.portal-login-box input {
+  width: 100%; padding: 12px 14px; border: 1px solid var(--grey3);
+  border-radius: 8px; font-size: 14px; box-sizing: border-box; transition: border-color 0.2s;
+}
+.portal-login-box input:focus { outline: none; border-color: var(--green); }
+.portal-note { font-size: 11px; color: var(--grey); margin-top: 16px; line-height: 1.6; text-align: center; }
