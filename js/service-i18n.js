@@ -1,6 +1,5 @@
 // ============================================================
 // js/service-i18n.js — TECHSINNO Service Page Translations
-// Reads saved language (shared with homepage) and translates.
 // ============================================================
 (function () {
   'use strict';
@@ -713,7 +712,10 @@
       "cta_h": "Bring your farm online",
       "cta_p": "Tell us about your farm and we'll design an IoT solution — request a quote or book a site survey.",
       "cta_quote": "Request a Quote →",
-      "cta_book": "Book a Session"
+      "cta_book": "Book a Session",
+      "iot_label": "Live demo",
+      "iot_h": "YOUR FARM DATA, ANYWHERE",
+      "iot_p": "Custom Arduino and ESP32 sensor networks transmit live field data to an Azure cloud dashboard. Monitor soil moisture, temperature, pH, and irrigation status in real time — and get SMS or email alerts the moment a threshold is breached. No more walking the fields to check."
     },
     "fr": {
       "back": "Retour à l'accueil",
@@ -767,7 +769,10 @@
       "cta_h": "Connectez votre ferme",
       "cta_p": "Parlez-nous de votre ferme et nous concevrons une solution IoT — demandez un devis ou réservez une étude sur site.",
       "cta_quote": "Demander un Devis →",
-      "cta_book": "Réserver une Session"
+      "cta_book": "Réserver une Session",
+      "iot_label": "Démo en direct",
+      "iot_h": "VOS DONNÉES DE FERME, PARTOUT",
+      "iot_p": "Des réseaux de capteurs Arduino et ESP32 personnalisés transmettent des données de terrain en direct vers un tableau de bord Azure Cloud. Surveillez l'humidité du sol, la température, le pH et l'irrigation en temps réel — et recevez des alertes SMS ou email dès qu'un seuil est dépassé. Plus besoin de parcourir les champs."
     },
     "af": {
       "back": "Terug na Tuis",
@@ -821,7 +826,10 @@
       "cta_h": "Bring u plaas aanlyn",
       "cta_p": "Vertel ons van u plaas en ons sal 'n IoT-oplossing ontwerp — versoek 'n kwotasie of bespreek 'n terreinopname.",
       "cta_quote": "Versoek 'n Kwotasie →",
-      "cta_book": "Bespreek 'n Sessie"
+      "cta_book": "Bespreek 'n Sessie",
+      "iot_label": "Lewendige demo",
+      "iot_h": "JOU PLAASDATA, ORALKANT",
+      "iot_p": "Pasgemaakte Arduino- en ESP32-sensornetwerke stuur lewendige velddata na 'n Azure-wolkpaneel. Monitor grondvog, temperatuur, pH en besproeiingstatus intyds — en kry SMS- of e-poswaarskuwings die oomblik wanneer 'n drempel oorskry word. Geen veldlopery meer nie."
     },
     "pt": {
       "back": "Voltar ao Início",
@@ -875,21 +883,16 @@
       "cta_h": "Coloque a sua exploração online",
       "cta_p": "Fale-nos sobre a sua exploração e concebremos uma solução IoT — peça um orçamento ou marque um levantamento no local.",
       "cta_quote": "Pedir Orçamento →",
-      "cta_book": "Marcar Sessão"
+      "cta_book": "Marcar Sessão",
+      "iot_label": "Demo ao vivo",
+      "iot_h": "OS SEUS DADOS DE EXPLORAÇÃO, EM QUALQUER LUGAR",
+      "iot_p": "Redes de sensores Arduino e ESP32 personalizadas transmitem dados de campo em directo para um painel Azure Cloud. Monitorize a humidade do solo, temperatura, pH e estado de irrigação em tempo real — e receba alertas SMS ou email no momento em que um limite é ultrapassado. Não precisa mais de percorrer os campos."
     }
   }
 };
 
-  function getLang() {
-    var l = 'en';
-    try { l = localStorage.getItem('techsinno_lang') || 'en'; } catch (e) {}
-    return l;
-  }
-
-  function setLang(l) {
-    try { localStorage.setItem('techsinno_lang', l); } catch (e) {}
-  }
-
+  function getLang() { var l='en'; try { l = localStorage.getItem('techsinno_lang') || 'en'; } catch (e) {} return l; }
+  function setLang(l) { try { localStorage.setItem('techsinno_lang', l); } catch (e) {} }
   function apply(lang) {
     var page = document.body.getAttribute('data-sp-page');
     if (!page || !SP[page]) return;
@@ -897,36 +900,20 @@
     var els = document.querySelectorAll('[data-sp]');
     for (var i = 0; i < els.length; i++) {
       var key = els[i].getAttribute('data-sp');
-      if (dict[key] !== undefined) {
-        els[i].textContent = dict[key];
-      }
+      if (dict[key] !== undefined) els[i].textContent = dict[key];
     }
-    // Update active state on language buttons
     var btns = document.querySelectorAll('.sp-lang-btn');
     for (var j = 0; j < btns.length; j++) {
       btns[j].classList.toggle('active', btns[j].getAttribute('data-lang') === lang);
     }
-    // Update <html lang="">
     document.documentElement.setAttribute('lang', lang);
   }
-
   function init() {
     apply(getLang());
     var btns = document.querySelectorAll('.sp-lang-btn');
     for (var i = 0; i < btns.length; i++) {
-      (function (b) {
-        b.addEventListener('click', function () {
-          var l = b.getAttribute('data-lang');
-          setLang(l);
-          apply(l);
-        });
-      })(btns[i]);
+      (function (b) { b.addEventListener('click', function () { var l=b.getAttribute('data-lang'); setLang(l); apply(l); }); })(btns[i]);
     }
   }
-
-  if (document.readyState === 'loading') {
-    document.addEventListener('DOMContentLoaded', init);
-  } else {
-    init();
-  }
+  if (document.readyState === 'loading') { document.addEventListener('DOMContentLoaded', init); } else { init(); }
 })();
