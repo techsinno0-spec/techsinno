@@ -90,6 +90,43 @@
   </div>
 </section>
 
+<section class="sp-section" id="farm-data">
+  <div class="container">
+    <div class="sp-label" data-sp="iot_label">Live demo</div>
+    <h2 data-sp="iot_h">YOUR FARM DATA, ANYWHERE</h2>
+    <p data-sp="iot_p">Custom Arduino and ESP32 sensor networks transmit live field data to an Azure cloud dashboard. Monitor soil moisture, temperature, pH, and irrigation status in real time — and get SMS or email alerts the moment a threshold is breached. No more walking the fields to check.</p>
+
+    <div class="iot-demo-dashboard">
+      <div class="dash-header">
+        <span class="dash-title mono"><span class="status-dot"></span> FIELD-A // LIVE</span>
+        <span class="dash-time mono" id="dash-clock">00:00:00</span>
+      </div>
+      <div class="dash-nodes">
+        <div class="node-card">
+          <div class="node-name mono"><i class="ti ti-droplet"></i> MOISTURE</div>
+          <div class="node-val" id="val-moisture">61.0</div>
+          <div class="node-unit mono">% — Optimal</div>
+        </div>
+        <div class="node-card">
+          <div class="node-name mono"><i class="ti ti-temperature"></i> SOIL TEMP</div>
+          <div class="node-val" id="val-temp">23.4</div>
+          <div class="node-unit mono">°C — Normal</div>
+        </div>
+        <div class="node-card">
+          <div class="node-name mono"><i class="ti ti-flask"></i> SOIL pH</div>
+          <div class="node-val" id="val-ph">6.8</div>
+          <div class="node-unit mono">pH — Optimal</div>
+        </div>
+        <div class="node-card">
+          <div class="node-name mono"><i class="ti ti-sun"></i> LIGHT</div>
+          <div class="node-val" id="val-light">42300</div>
+          <div class="node-unit mono">lux — High</div>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
 <section class="sp-section">
   <div class="container">
     <div class="sp-suggestion">
@@ -119,5 +156,13 @@
 </footer>
 
 <script src="js/service-i18n.js"></script>
+<script>
+(function(){
+  function clock(){ var el=document.getElementById('dash-clock'); if(el) el.textContent=new Date().toLocaleTimeString('en-ZA',{hour12:false}); }
+  var sensors={moisture:{b:61,r:3,id:'val-moisture'},temp:{b:23.4,r:1.5,id:'val-temp'},ph:{b:6.8,r:0.2,id:'val-ph'},light:{b:42300,r:2000,id:'val-light'}};
+  function tick(){ for(var k in sensors){ var s=sensors[k]; var el=document.getElementById(s.id); if(!el) continue; var v=s.b+(Math.random()-0.5)*s.r; el.textContent = v<100? v.toFixed(1) : Math.round(v).toLocaleString(); } }
+  clock(); setInterval(clock,1000); tick(); setInterval(tick,3000);
+})();
+</script>
 </body>
 </html>

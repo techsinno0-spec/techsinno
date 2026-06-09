@@ -38,14 +38,12 @@
     </a>
 
     <ul class="nav-links">
-      <li><a href="#services" data-i18n="nav_0">Services</a>
-  <a href="#process" data-i18n="nav_process">Process</a></li>
-      <li><a href="#process" data-i18n="nav_process">Process</a></li>
-      <li><a href="#iot"      data-i18n="nav_1">IoT</a></li>
+      <li><a href="#services" data-i18n="nav_0">Services</a></li>
+      <li><a href="process.html" data-i18n="nav_process">Process</a></li>
       <li><a href="#about"   data-i18n="nav_2">About</a></li>
       <li><a href="#booking" data-i18n="nav_booking">Booking</a></li>
       <li><a href="#contact" data-i18n="nav_3">Contact</a></li>
-      <li><a href="#portal"  data-i18n="nav_4">Portal</a></li>
+      <li><a href="portal.html" class="nav-login" data-i18n="nav_login">Client Login</a></li>
     </ul>
 
     <div style="display:flex;align-items:center;gap:16px;">
@@ -65,11 +63,11 @@
 <!-- Mobile nav -->
 <div class="mobile-nav" id="mobile-nav">
   <a href="#services" data-i18n="nav_0">Services</a>
-  <a href="#iot"      data-i18n="nav_1">IoT</a>
+  <a href="process.html" data-i18n="nav_process">Process</a>
   <a href="#about"    data-i18n="nav_2">About</a>
   <a href="#booking"  data-i18n="nav_booking">Booking</a>
   <a href="#contact"  data-i18n="nav_3">Contact</a>
-  <a href="#portal"   data-i18n="nav_4">Portal</a>
+  <a href="portal.html" data-i18n="nav_login">Client Login</a>
 </div>
 
 <!-- ══════════════════════════════════════════
@@ -237,152 +235,7 @@
 </section>
 
 
-<!-- ══════════════════════════════════════════
-     HOW IT WORKS
-══════════════════════════════════════════ -->
-<section id="process">
-  <div class="container">
-    <div style="text-align:center;margin-bottom:48px;">
-      <span class="section-label fade-up" style="justify-content:center;" data-i18n="process_label">How it works</span>
-      <h2 class="fade-up" data-i18n="process_title">FROM CONCEPT<br>TO COMPLETION</h2>
-      <p class="fade-up" style="color:var(--grey);font-size:16px;max-width:620px;margin:16px auto 0;" data-i18n="process_intro">Every project follows our proven full-cycle process — we stay with you from the first conversation to long-term maintenance.</p>
-    </div>
 
-    <div class="process-banner fade-up">
-      <img src="img/process-banner.jpg" alt="TECHSINNO full-cycle process: Consultation, Design, Prototyping, Build & Install, Maintenance" />
-    </div>
-
-    <div class="process-steps fade-up">
-      <div class="process-step">
-        <div class="process-step-icon"><i class="ti ti-messages" aria-hidden="true"></i></div>
-        <div class="process-step-num">01</div>
-        <h4 data-i18n="ps1_t">Consultation</h4>
-        <p data-i18n="ps1_d">We listen to your needs and scope the right solution.</p>
-      </div>
-      <div class="process-step">
-        <div class="process-step-icon"><i class="ti ti-pencil" aria-hidden="true"></i></div>
-        <div class="process-step-num">02</div>
-        <h4 data-i18n="ps2_t">Design</h4>
-        <p data-i18n="ps2_d">Engineering design, schematics, and documentation.</p>
-      </div>
-      <div class="process-step">
-        <div class="process-step-icon"><i class="ti ti-test-pipe" aria-hidden="true"></i></div>
-        <div class="process-step-num">03</div>
-        <h4 data-i18n="ps3_t">Prototyping</h4>
-        <p data-i18n="ps3_d">Build and test a working prototype before production.</p>
-      </div>
-      <div class="process-step">
-        <div class="process-step-icon"><i class="ti ti-tool" aria-hidden="true"></i></div>
-        <div class="process-step-num">04</div>
-        <h4 data-i18n="ps4_t">Build &amp; Install</h4>
-        <p data-i18n="ps4_d">Full assembly, installation, and commissioning.</p>
-      </div>
-      <div class="process-step">
-        <div class="process-step-icon"><i class="ti ti-settings" aria-hidden="true"></i></div>
-        <div class="process-step-num">05</div>
-        <h4 data-i18n="ps5_t">Maintenance</h4>
-        <p data-i18n="ps5_d">Ongoing support, maintenance, and repairs.</p>
-      </div>
-    </div>
-  </div>
-</section>
-
-<!-- ══════════════════════════════════════════
-     IOT DASHBOARD
-══════════════════════════════════════════ -->
-<section id="iot">
-  <div class="container">
-    <div class="iot-layout">
-
-      <!-- Left: intro -->
-      <div class="iot-intro">
-        <span class="section-label fade-up" data-i18n="iot_label">Agricultural IoT</span>
-        <h2 class="fade-up" data-i18n="iot_title">YOUR FARM DATA,<br>ANYWHERE</h2>
-        <p class="fade-up" data-i18n="iot_p1">Custom Arduino and ESP32 sensor networks transmit live field data to an Azure cloud dashboard.</p>
-        <p class="fade-up" data-i18n="iot_p2">Get SMS or email alerts when thresholds are breached. No more walking the fields to check.</p>
-        <ul class="iot-features">
-          <li class="fade-up" data-i18n="iot_f1">Real-time sensor data via MQTT / HTTPS</li>
-          <li class="fade-up" data-i18n="iot_f2">Azure IoT Hub — 8,000 messages/day free</li>
-          <li class="fade-up" data-i18n="iot_f3">Custom web dashboard per client</li>
-          <li class="fade-up" data-i18n="iot_f4">SMS + email threshold alerts</li>
-          <li class="fade-up" data-i18n="iot_f5">Solar-powered nodes for remote fields</li>
-        </ul>
-        <a href="#contact" class="btn-primary fade-up" data-i18n="hero_btn1">Get a Quote</a>
-      </div>
-
-      <!-- Right: live dashboard -->
-      <div class="iot-dashboard fade-up">
-        <div class="dash-header">
-          <span class="dash-title mono"><span class="status-dot"></span> FIELD-A // LIVE</span>
-          <span class="dash-time mono" id="dash-clock">00:00:00</span>
-        </div>
-
-        <div class="dash-nodes">
-          <div class="node-card">
-            <div class="node-name mono"><i class="ti ti-droplet" aria-hidden="true"></i> MOISTURE</div>
-            <div class="node-val" id="val-moisture">61.0</div>
-            <div class="node-unit mono">% — Optimal</div>
-            <div class="mini-chart">
-              <div class="bar" style="height:40%"></div>
-              <div class="bar" style="height:55%"></div>
-              <div class="bar" style="height:62%"></div>
-              <div class="bar" style="height:58%"></div>
-              <div class="bar" style="height:61%"></div>
-              <div class="bar active" style="height:61%"></div>
-            </div>
-          </div>
-          <div class="node-card">
-            <div class="node-name mono"><i class="ti ti-temperature" aria-hidden="true"></i> SOIL TEMP</div>
-            <div class="node-val" id="val-temp">23.4</div>
-            <div class="node-unit mono">°C — Normal</div>
-            <div class="mini-chart">
-              <div class="bar" style="height:70%"></div>
-              <div class="bar" style="height:72%"></div>
-              <div class="bar" style="height:68%"></div>
-              <div class="bar" style="height:74%"></div>
-              <div class="bar" style="height:72%"></div>
-              <div class="bar active" style="height:72%"></div>
-            </div>
-          </div>
-          <div class="node-card">
-            <div class="node-name mono"><i class="ti ti-flask" aria-hidden="true"></i> SOIL pH</div>
-            <div class="node-val" id="val-ph">6.8</div>
-            <div class="node-unit mono">pH — Optimal</div>
-            <div class="mini-chart">
-              <div class="bar" style="height:66%"></div>
-              <div class="bar" style="height:68%"></div>
-              <div class="bar" style="height:67%"></div>
-              <div class="bar" style="height:69%"></div>
-              <div class="bar" style="height:68%"></div>
-              <div class="bar active" style="height:68%"></div>
-            </div>
-          </div>
-          <div class="node-card">
-            <div class="node-name mono"><i class="ti ti-sun" aria-hidden="true"></i> LIGHT</div>
-            <div class="node-val" id="val-light">42,300</div>
-            <div class="node-unit mono">lux — High</div>
-            <div class="mini-chart">
-              <div class="bar" style="height:80%"></div>
-              <div class="bar" style="height:85%"></div>
-              <div class="bar" style="height:88%"></div>
-              <div class="bar" style="height:84%"></div>
-              <div class="bar" style="height:87%"></div>
-              <div class="bar active" style="height:88%"></div>
-            </div>
-          </div>
-        </div>
-
-        <div class="dash-alerts">
-          <div class="alert-row"><span class="alert-ok mono">✓</span> <span class="mono">Irrigation valve — OPEN</span></div>
-          <div class="alert-row"><span class="alert-ok mono">✓</span> <span class="mono">Node 01 battery — 87%</span></div>
-          <div class="alert-row"><span class="alert-ok mono">✓</span> <span class="mono">Azure IoT Hub — Connected</span></div>
-          <div class="alert-row"><span class="alert-warn mono">⚠</span> <span class="mono">Node 03 — Low signal (-82 dBm)</span></div>
-        </div>
-      </div>
-
-    </div>
-  </div>
-</section>
 
 <!-- ══════════════════════════════════════════
      ABOUT
@@ -428,7 +281,7 @@
 <!-- ══════════════════════════════════════════
      CONTACT
 ══════════════════════════════════════════ -->
-<section id="contact">
+<section id="contact" class="connect-half">
   <div class="container">
     <span class="section-label fade-up" data-i18n="contact_label">Get in touch</span>
     <h2 class="fade-up" style="margin-bottom:48px;" data-i18n="contact_title">REQUEST A<br>QUOTE</h2>
@@ -441,7 +294,7 @@
           <div class="contact-icon"><i class="ti ti-mail" aria-hidden="true"></i></div>
           <div>
             <h4 data-i18n="c_email">Email</h4>
-            <p>techsinno0@gmail.com</p>
+            <p>frank@techsinno.com</p>
           </div>
         </div>
         <div class="contact-item">
@@ -517,7 +370,7 @@
 <!-- ══════════════════════════════════════════
      BOOKING SECTION
 ══════════════════════════════════════════ -->
-<section id="booking">
+<section id="booking" class="connect-half">
   <div class="container">
     <span class="section-label fade-up" data-i18n="booking_label">Book with us</span>
     <h2 class="fade-up" style="margin-bottom:16px;" data-i18n="booking_title">SCHEDULE A<br>SESSION</h2>
@@ -609,61 +462,6 @@
   </div>
 </section>
 
-<!-- ══════════════════════════════════════════
-     CLIENT PORTAL
-══════════════════════════════════════════ -->
-<section id="portal">
-  <div class="container">
-    <div class="portal-inner">
-
-      <!-- Login box -->
-      <div class="portal-login fade-up">
-        <span class="section-label" data-i18n="portal_label">Client Portal</span>
-        <h3 data-i18n="portal_title">CLIENT<br>ACCESS</h3>
-        <p class="mono" data-i18n="portal_sub">// Secure portal — clients only</p>
-
-        <div class="contact-form" style="margin-top:0;">
-          <div class="form-group">
-            <label data-i18n="portal_email">Email address</label>
-            <input type="email" placeholder="client@company.com" />
-          </div>
-          <div class="form-group">
-            <label data-i18n="portal_pass">Password</label>
-            <input type="password" placeholder="••••••••" />
-          </div>
-          <button class="btn-primary" data-i18n="portal_btn" onclick="alert('Portal coming soon — access provided after project onboarding.')">Sign In →</button>
-          <p class="mono muted" style="font-size:11px;margin-top:8px;" data-i18n="portal_note">Access provided after project onboarding.</p>
-        </div>
-      </div>
-
-      <!-- Portal features -->
-      <div class="portal-features fade-up">
-        <div class="portal-feature">
-          <div class="portal-feature-icon"><i class="ti ti-chart-line" aria-hidden="true"></i></div>
-          <div>
-            <h4 data-i18n="pf1_title">IOT DASHBOARDS</h4>
-            <p data-i18n="pf1_desc">Live sensor feeds and historical data for your agricultural or industrial deployment.</p>
-          </div>
-        </div>
-        <div class="portal-feature">
-          <div class="portal-feature-icon"><i class="ti ti-checklist" aria-hidden="true"></i></div>
-          <div>
-            <h4 data-i18n="pf2_title">PROJECT STATUS</h4>
-            <p data-i18n="pf2_desc">Track repair and automation project progress, milestones, and delivery dates.</p>
-          </div>
-        </div>
-        <div class="portal-feature">
-          <div class="portal-feature-icon"><i class="ti ti-file-invoice" aria-hidden="true"></i></div>
-          <div>
-            <h4 data-i18n="pf3_title">INVOICES &amp; DOCS</h4>
-            <p data-i18n="pf3_desc">Download invoices, technical reports, and maintenance schedules from your portal.</p>
-          </div>
-        </div>
-      </div>
-
-    </div>
-  </div>
-</section>
 
 <!-- ══════════════════════════════════════════
      FOOTER
@@ -680,10 +478,10 @@
       <div class="footer-col">
         <h5 data-i18n="fc1">Services</h5>
         <ul>
-          <li><a href="#services" data-i18n="fl_s1">Electronics Repair</a></li>
-          <li><a href="#services" data-i18n="fl_s2">Industrial Automation</a></li>
-          <li><a href="#iot"      data-i18n="fl_s3">Agricultural IoT</a></li>
-          <li><a href="#portal"  data-i18n="fl_s4">Client Portal</a></li>
+          <li><a href="electronics.html" data-i18n="fl_s1">Electronics Repair</a></li>
+          <li><a href="automation.html" data-i18n="fl_s2">Industrial Automation</a></li>
+          <li><a href="agricultural-iot.html" data-i18n="fl_s3">Agricultural IoT</a></li>
+          <li><a href="portal.html"  data-i18n="fl_s4">Client Portal</a></li>
         </ul>
       </div>
 
