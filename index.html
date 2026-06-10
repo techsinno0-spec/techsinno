@@ -138,7 +138,7 @@
         <div class="hero-stat-label mono" data-i18n="stat3">SERVICE LINES</div>
       </div>
       <div class="hero-stat fade-up">
-        <div class="hero-stat-num accent">3</div>
+        <div class="hero-stat-num accent">4</div>
         <div class="hero-stat-label mono" data-i18n="stat4">LANGUAGES</div>
       </div>
     </div>
@@ -326,6 +326,8 @@
 
       <!-- Form -->
       <form id="quote-form" class="contact-form fade-up" onsubmit="return false;">
+        <!-- Honeypot: hidden from humans, bots tend to fill it. Leave empty. -->
+        <input type="text" name="company_website" tabindex="-1" autocomplete="off" aria-hidden="true" style="position:absolute;left:-9999px;width:1px;height:1px;opacity:0;" />
         <div class="form-row">
           <div class="form-group">
             <label data-i18n="fn_label">First Name</label>
@@ -349,12 +351,12 @@
         <div class="form-group">
           <label data-i18n="service_label">Service Required</label>
           <select name="service" required>
-            <option value="" data-i18n-option="svc_opt0">Select a service</option>
-            <option value="repair"     data-i18n-option="svc_opt1">Electronics Repair</option>
-            <option value="automation" data-i18n-option="svc_opt2">Industrial Automation</option>
-            <option value="electronics" data-i18n-option="svc_opt1b">Electronics Engineering</option>
-            <option value="iot"        data-i18n-option="svc_opt3">Agricultural IoT</option>
-            <option value="other"      data-i18n-option="svc_opt4">Other / Consultation</option>
+            <option value=""            data-i18n-option="svc_opt0">Select a service</option>
+            <option value="electronics" data-i18n-option="svc_opt1">Electronics Engineering</option>
+            <option value="pcb"         data-i18n-option="svc_opt2">PCB Design &amp; Engineering</option>
+            <option value="automation"  data-i18n-option="svc_opt3">Industrial Automation</option>
+            <option value="iot"         data-i18n-option="svc_opt4">Agricultural IoT</option>
+            <option value="other"       data-i18n-option="svc_opt5">Other / Consultation</option>
           </select>
         </div>
         <div class="form-group">
@@ -408,6 +410,8 @@
 
       <!-- Booking form -->
       <form id="booking-form" class="booking-form fade-up" onsubmit="return false;">
+        <!-- Honeypot: hidden from humans, bots tend to fill it. Leave empty. -->
+        <input type="text" name="company_website" tabindex="-1" autocomplete="off" aria-hidden="true" style="position:absolute;left:-9999px;width:1px;height:1px;opacity:0;" />
         <input type="hidden" name="bookingType" id="bookingType" value="meeting" />
         <div class="form-row">
           <div class="form-group">
