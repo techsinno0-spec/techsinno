@@ -14,15 +14,31 @@
 <nav id="navbar">
   <div class="nav-inner">
     <a href="index.html" class="nav-logo"><img src="img/logo.png" alt="TECHSINNO" /></a>
-    <div style="display:flex;align-items:center;gap:16px;">
+    <ul class="nav-links sp-nav-links">
+      <li><a href="index.html#services" data-spnav="nav_services">Services</a></li>
+      <li><a href="process.html" data-spnav="nav_process">Process</a></li>
+      <li><a href="index.html#about" data-spnav="nav_about">About</a></li>
+      <li><a href="index.html#booking" data-spnav="nav_booking">Booking</a></li>
+      <li><a href="index.html#contact" data-spnav="nav_contact">Contact</a></li>
+      <li><a href="portal.html" class="nav-login" data-spnav="nav_login">Client Login</a></li>
+    </ul>
+    <div class="sp-nav-right">
       <div class="sp-lang-switch">
         <button class="sp-lang-btn" data-lang="en" data-tooltip="English" title="English">EN</button>
         <button class="sp-lang-btn" data-lang="fr" data-tooltip="Français" title="Français">FR</button>
         <button class="sp-lang-btn" data-lang="af" data-tooltip="Afrikaans" title="Afrikaans">AF</button>
         <button class="sp-lang-btn" data-lang="pt" data-tooltip="Português" title="Português">PT</button>
       </div>
-      <a href="index.html" class="nav-back" data-sp="back"><i class="ti ti-arrow-left"></i> <span data-sp="back">Back to Home</span></a>
+      <div class="sp-nav-toggle" id="sp-nav-toggle" aria-label="Menu"><span></span><span></span><span></span></div>
     </div>
+  </div>
+  <div class="sp-mobile-nav" id="sp-mobile-nav">
+    <a href="index.html#services" data-spnav="nav_services">Services</a>
+    <a href="process.html" data-spnav="nav_process">Process</a>
+    <a href="index.html#about" data-spnav="nav_about">About</a>
+    <a href="index.html#booking" data-spnav="nav_booking">Booking</a>
+    <a href="index.html#contact" data-spnav="nav_contact">Contact</a>
+    <a href="portal.html" data-spnav="nav_login">Client Login</a>
   </div>
 </nav>
 
@@ -137,6 +153,26 @@
   </div>
 </section>
 
+<section class="sp-pagenav">
+  <div class="container">
+    <a href="automation.html" class="sp-pagenav-btn sp-pagenav-prev">
+      <i class="ti ti-arrow-left"></i>
+      <span class="sp-pagenav-text">
+        <span class="sp-pagenav-label" data-sp="nav_prev_label">Previous</span>
+        <span class="sp-pagenav-name" data-sp="nav_prev_name">Industrial Automation</span>
+      </span>
+    </a>
+    <a href="index.html#services" class="sp-pagenav-all" title="All services"><i class="ti ti-grid-dots"></i></a>
+    <a href="electronics.html" class="sp-pagenav-btn sp-pagenav-next">
+      <span class="sp-pagenav-text">
+        <span class="sp-pagenav-label" data-sp="nav_next_label">Next</span>
+        <span class="sp-pagenav-name" data-sp="nav_next_name">Electronics Engineering</span>
+      </span>
+      <i class="ti ti-arrow-right"></i>
+    </a>
+  </div>
+</section>
+
 <section class="sp-cta">
   <div class="container">
     <h2 data-sp="cta_h">Bring your farm online</h2>
@@ -145,6 +181,25 @@
       <a href="index.html#contact" class="btn-primary" data-sp="cta_quote">Request a Quote →</a>
       <a href="index.html#booking" class="btn-outline" data-sp="cta_book">Book a Session</a>
     </div>
+  </div>
+</section>
+
+<section class="sp-pager">
+  <div class="container">
+    <a href="automation.html" class="sp-pager-btn sp-pager-prev">
+      <div class="sp-pager-arrow"><i class="ti ti-arrow-left"></i></div>
+      <div class="sp-pager-text">
+        <span class="sp-pager-label mono" data-sp="nav_prev_label">PREVIOUS SERVICE</span>
+        <span class="sp-pager-name" data-sp="nav_prev_name">Industrial Automation</span>
+      </div>
+    </a>
+    <a href="electronics.html" class="sp-pager-btn sp-pager-next">
+      <div class="sp-pager-text">
+        <span class="sp-pager-label mono" data-sp="nav_next_label">NEXT SERVICE</span>
+        <span class="sp-pager-name" data-sp="nav_next_name">Electronics Engineering</span>
+      </div>
+      <div class="sp-pager-arrow"><i class="ti ti-arrow-right"></i></div>
+    </a>
   </div>
 </section>
 
