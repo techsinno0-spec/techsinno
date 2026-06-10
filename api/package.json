@@ -1,7 +1,7 @@
 {
   "name": "techsinno-api",
   "version": "1.0.0",
-  "description": "TECHSINNO Azure Functions backend — quote form, email, Cosmos DB",
+  "description": "TECHSINNO Azure Functions backend — quote form, bookings, email, Cosmos DB",
   "main": "index.js",
   "scripts": {
     "start": "func start",
@@ -13,6 +13,6 @@
     "uuid": "^9.0.0"
   },
   "engines": {
-    "node": ">=18.0.0"
+    "node": "~20"
   }
 }

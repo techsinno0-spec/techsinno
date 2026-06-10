@@ -11,15 +11,5 @@
   "extensionBundle": {
     "id": "Microsoft.Azure.Functions.ExtensionBundle",
     "version": "[4.*, 5.0.0)"
-  },
-  "cors": {
-    "allowedOrigins": [
-      "http://localhost:3000",
-      "http://127.0.0.1:5500",
-      "https://*.azurestaticapps.net",
-      "https://techsinno.com",
-      "https://www.techsinno.com"
-    ],
-    "supportCredentials": false
   }
 }
