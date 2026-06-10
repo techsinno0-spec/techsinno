@@ -12,6 +12,11 @@
       var k = els[i].getAttribute('data-sp');
       if(dict[k]!==undefined) els[i].textContent = dict[k];
     }
+    var navs = document.querySelectorAll('[data-spnav]');
+    for(var n=0;n<navs.length;n++){
+      var nk = navs[n].getAttribute('data-spnav');
+      if(dict[nk]!==undefined) navs[n].textContent = dict[nk];
+    }
     var btns = document.querySelectorAll('.sp-lang-btn');
     for(var j=0;j<btns.length;j++){
       btns[j].classList.toggle('active', btns[j].getAttribute('data-lang')===lang);
@@ -24,6 +29,9 @@
     for(var i=0;i<btns.length;i++){
       (function(b){ b.addEventListener('click', function(){ var l=b.getAttribute('data-lang'); setLang(l); apply(l); }); })(btns[i]);
     }
+    var tg = document.getElementById('sp-nav-toggle');
+    var mn = document.getElementById('sp-mobile-nav');
+    if(tg && mn){ tg.addEventListener('click', function(){ mn.classList.toggle('open'); tg.classList.toggle('active'); }); }
   }
   if(document.readyState==='loading'){ document.addEventListener('DOMContentLoaded', init); } else { init(); }
 })();

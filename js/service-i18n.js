@@ -1,6 +1,4 @@
-// ============================================================
 // js/service-i18n.js — TECHSINNO Service Page Translations
-// ============================================================
 (function () {
   'use strict';
 
@@ -58,7 +56,11 @@
       "cta_h": "Let's build it together",
       "cta_p": "Tell us about your electronics project and we'll prepare a tailored quote or schedule a consultation.",
       "cta_quote": "Request a Quote →",
-      "cta_book": "Book a Session"
+      "cta_book": "Book a Session",
+      "nav_prev_label": "PREVIOUS SERVICE",
+      "nav_next_label": "NEXT SERVICE",
+      "nav_prev_name": "Agricultural IoT",
+      "nav_next_name": "PCB Design"
     },
     "fr": {
       "back": "Retour à l'accueil",
@@ -112,7 +114,11 @@
       "cta_h": "Construisons-le ensemble",
       "cta_p": "Parlez-nous de votre projet électronique et nous préparerons un devis personnalisé ou planifierons une consultation.",
       "cta_quote": "Demander un Devis →",
-      "cta_book": "Réserver une Session"
+      "cta_book": "Réserver une Session",
+      "nav_prev_label": "SERVICE PRÉCÉDENT",
+      "nav_next_label": "SERVICE SUIVANT",
+      "nav_prev_name": "IoT Agricole",
+      "nav_next_name": "Conception PCB"
     },
     "af": {
       "back": "Terug na Tuis",
@@ -166,7 +172,11 @@
       "cta_h": "Kom ons bou dit saam",
       "cta_p": "Vertel ons van u elektroniese projek en ons sal 'n pasgemaakte kwotasie voorberei of 'n konsultasie skeduleer.",
       "cta_quote": "Versoek 'n Kwotasie →",
-      "cta_book": "Bespreek 'n Sessie"
+      "cta_book": "Bespreek 'n Sessie",
+      "nav_prev_label": "VORIGE DIENS",
+      "nav_next_label": "VOLGENDE DIENS",
+      "nav_prev_name": "Landbou-IoT",
+      "nav_next_name": "PCB-Ontwerp"
     },
     "pt": {
       "back": "Voltar ao Início",
@@ -220,7 +230,11 @@
       "cta_h": "Vamos construí-lo juntos",
       "cta_p": "Fale-nos sobre o seu projecto electrónico e prepararemos um orçamento personalizado ou agendaremos uma consulta.",
       "cta_quote": "Pedir Orçamento →",
-      "cta_book": "Marcar Sessão"
+      "cta_book": "Marcar Sessão",
+      "nav_prev_label": "SERVIÇO ANTERIOR",
+      "nav_next_label": "PRÓXIMO SERVIÇO",
+      "nav_prev_name": "IoT Agrícola",
+      "nav_next_name": "Design PCB"
     }
   },
   "pcb-design": {
@@ -276,7 +290,11 @@
       "cta_h": "Ready to design your board?",
       "cta_p": "Share your circuit requirements and we'll prepare a PCB design quote or book a technical discussion.",
       "cta_quote": "Request a Quote →",
-      "cta_book": "Book a Session"
+      "cta_book": "Book a Session",
+      "nav_prev_label": "PREVIOUS SERVICE",
+      "nav_next_label": "NEXT SERVICE",
+      "nav_prev_name": "Electronics Engineering",
+      "nav_next_name": "Industrial Automation"
     },
     "fr": {
       "back": "Retour à l'accueil",
@@ -330,7 +348,11 @@
       "cta_h": "Prêt à concevoir votre carte?",
       "cta_p": "Partagez les exigences de votre circuit et nous préparerons un devis de conception PCB ou planifierons une discussion technique.",
       "cta_quote": "Demander un Devis →",
-      "cta_book": "Réserver une Session"
+      "cta_book": "Réserver une Session",
+      "nav_prev_label": "SERVICE PRÉCÉDENT",
+      "nav_next_label": "SERVICE SUIVANT",
+      "nav_prev_name": "Ingénierie Électronique",
+      "nav_next_name": "Automatisation Industrielle"
     },
     "af": {
       "back": "Terug na Tuis",
@@ -384,7 +406,11 @@
       "cta_h": "Gereed om u bord te ontwerp?",
       "cta_p": "Deel u stroombaanvereistes en ons sal 'n PCB-ontwerpkwotasie voorberei of 'n tegniese bespreking bespreek.",
       "cta_quote": "Versoek 'n Kwotasie →",
-      "cta_book": "Bespreek 'n Sessie"
+      "cta_book": "Bespreek 'n Sessie",
+      "nav_prev_label": "VORIGE DIENS",
+      "nav_next_label": "VOLGENDE DIENS",
+      "nav_prev_name": "Elektronika-Ingenieurswese",
+      "nav_next_name": "Industriële Outomatisering"
     },
     "pt": {
       "back": "Voltar ao Início",
@@ -438,7 +464,11 @@
       "cta_h": "Pronto para conceber a sua placa?",
       "cta_p": "Partilhe os requisitos do seu circuito e prepararemos um orçamento de design PCB ou marcaremos uma discussão técnica.",
       "cta_quote": "Pedir Orçamento →",
-      "cta_book": "Marcar Sessão"
+      "cta_book": "Marcar Sessão",
+      "nav_prev_label": "SERVIÇO ANTERIOR",
+      "nav_next_label": "PRÓXIMO SERVIÇO",
+      "nav_prev_name": "Engenharia Electrónica",
+      "nav_next_name": "Automação Industrial"
     }
   },
   "automation": {
@@ -494,7 +524,11 @@
       "cta_h": "Keep your operation running",
       "cta_p": "Discuss your automation project or maintenance needs — request a quote or book a site visit.",
       "cta_quote": "Request a Quote →",
-      "cta_book": "Book a Session"
+      "cta_book": "Book a Session",
+      "nav_prev_label": "PREVIOUS SERVICE",
+      "nav_next_label": "NEXT SERVICE",
+      "nav_prev_name": "PCB Design",
+      "nav_next_name": "Agricultural IoT"
     },
     "fr": {
       "back": "Retour à l'accueil",
@@ -548,7 +582,11 @@
       "cta_h": "Maintenez votre exploitation en marche",
       "cta_p": "Discutez de votre projet d'automatisation ou de vos besoins de maintenance — demandez un devis ou réservez une visite sur site.",
       "cta_quote": "Demander un Devis →",
-      "cta_book": "Réserver une Session"
+      "cta_book": "Réserver une Session",
+      "nav_prev_label": "SERVICE PRÉCÉDENT",
+      "nav_next_label": "SERVICE SUIVANT",
+      "nav_prev_name": "Conception PCB",
+      "nav_next_name": "IoT Agricole"
     },
     "af": {
       "back": "Terug na Tuis",
@@ -602,7 +640,11 @@
       "cta_h": "Hou u bedryf aan die gang",
       "cta_p": "Bespreek u outomatiseringsprojek of onderhoudsbehoeftes — versoek 'n kwotasie of bespreek 'n terreinbesoek.",
       "cta_quote": "Versoek 'n Kwotasie →",
-      "cta_book": "Bespreek 'n Sessie"
+      "cta_book": "Bespreek 'n Sessie",
+      "nav_prev_label": "VORIGE DIENS",
+      "nav_next_label": "VOLGENDE DIENS",
+      "nav_prev_name": "PCB-Ontwerp",
+      "nav_next_name": "Landbou-IoT"
     },
     "pt": {
       "back": "Voltar ao Início",
@@ -656,7 +698,11 @@
       "cta_h": "Mantenha a sua operação a funcionar",
       "cta_p": "Discuta o seu projecto de automação ou necessidades de manutenção — peça um orçamento ou marque uma visita ao local.",
       "cta_quote": "Pedir Orçamento →",
-      "cta_book": "Marcar Sessão"
+      "cta_book": "Marcar Sessão",
+      "nav_prev_label": "SERVIÇO ANTERIOR",
+      "nav_next_label": "PRÓXIMO SERVIÇO",
+      "nav_prev_name": "Design PCB",
+      "nav_next_name": "IoT Agrícola"
     }
   },
   "agricultural-iot": {
@@ -713,9 +759,10 @@
       "cta_p": "Tell us about your farm and we'll design an IoT solution — request a quote or book a site survey.",
       "cta_quote": "Request a Quote →",
       "cta_book": "Book a Session",
-      "iot_label": "Live demo",
-      "iot_h": "YOUR FARM DATA, ANYWHERE",
-      "iot_p": "Custom Arduino and ESP32 sensor networks transmit live field data to an Azure cloud dashboard. Monitor soil moisture, temperature, pH, and irrigation status in real time — and get SMS or email alerts the moment a threshold is breached. No more walking the fields to check."
+      "nav_prev_label": "PREVIOUS SERVICE",
+      "nav_next_label": "NEXT SERVICE",
+      "nav_prev_name": "Industrial Automation",
+      "nav_next_name": "Electronics Engineering"
     },
     "fr": {
       "back": "Retour à l'accueil",
@@ -770,9 +817,10 @@
       "cta_p": "Parlez-nous de votre ferme et nous concevrons une solution IoT — demandez un devis ou réservez une étude sur site.",
       "cta_quote": "Demander un Devis →",
       "cta_book": "Réserver une Session",
-      "iot_label": "Démo en direct",
-      "iot_h": "VOS DONNÉES DE FERME, PARTOUT",
-      "iot_p": "Des réseaux de capteurs Arduino et ESP32 personnalisés transmettent des données de terrain en direct vers un tableau de bord Azure Cloud. Surveillez l'humidité du sol, la température, le pH et l'irrigation en temps réel — et recevez des alertes SMS ou email dès qu'un seuil est dépassé. Plus besoin de parcourir les champs."
+      "nav_prev_label": "SERVICE PRÉCÉDENT",
+      "nav_next_label": "SERVICE SUIVANT",
+      "nav_prev_name": "Automatisation Industrielle",
+      "nav_next_name": "Ingénierie Électronique"
     },
     "af": {
       "back": "Terug na Tuis",
@@ -827,9 +875,10 @@
       "cta_p": "Vertel ons van u plaas en ons sal 'n IoT-oplossing ontwerp — versoek 'n kwotasie of bespreek 'n terreinopname.",
       "cta_quote": "Versoek 'n Kwotasie →",
       "cta_book": "Bespreek 'n Sessie",
-      "iot_label": "Lewendige demo",
-      "iot_h": "JOU PLAASDATA, ORALKANT",
-      "iot_p": "Pasgemaakte Arduino- en ESP32-sensornetwerke stuur lewendige velddata na 'n Azure-wolkpaneel. Monitor grondvog, temperatuur, pH en besproeiingstatus intyds — en kry SMS- of e-poswaarskuwings die oomblik wanneer 'n drempel oorskry word. Geen veldlopery meer nie."
+      "nav_prev_label": "VORIGE DIENS",
+      "nav_next_label": "VOLGENDE DIENS",
+      "nav_prev_name": "Industriële Outomatisering",
+      "nav_next_name": "Elektronika-Ingenieurswese"
     },
     "pt": {
       "back": "Voltar ao Início",
@@ -884,9 +933,10 @@
       "cta_p": "Fale-nos sobre a sua exploração e concebremos uma solução IoT — peça um orçamento ou marque um levantamento no local.",
       "cta_quote": "Pedir Orçamento →",
       "cta_book": "Marcar Sessão",
-      "iot_label": "Demo ao vivo",
-      "iot_h": "OS SEUS DADOS DE EXPLORAÇÃO, EM QUALQUER LUGAR",
-      "iot_p": "Redes de sensores Arduino e ESP32 personalizadas transmitem dados de campo em directo para um painel Azure Cloud. Monitorize a humidade do solo, temperatura, pH e estado de irrigação em tempo real — e receba alertas SMS ou email no momento em que um limite é ultrapassado. Não precisa mais de percorrer os campos."
+      "nav_prev_label": "SERVIÇO ANTERIOR",
+      "nav_next_label": "PRÓXIMO SERVIÇO",
+      "nav_prev_name": "Automação Industrial",
+      "nav_next_name": "Engenharia Electrónica"
     }
   }
 };
@@ -914,6 +964,10 @@
     for (var i = 0; i < btns.length; i++) {
       (function (b) { b.addEventListener('click', function () { var l=b.getAttribute('data-lang'); setLang(l); apply(l); }); })(btns[i]);
     }
+    // Mobile nav toggle (already in sub-pages)
+    var t = document.getElementById('sp-nav-toggle');
+    var m = document.getElementById('sp-mobile-nav');
+    if (t && m) { t.addEventListener('click', function(){ m.classList.toggle('open'); t.classList.toggle('open'); }); }
   }
   if (document.readyState === 'loading') { document.addEventListener('DOMContentLoaded', init); } else { init(); }
 })();
