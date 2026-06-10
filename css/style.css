@@ -896,27 +896,37 @@ footer { background: var(--navy); padding: 56px 0 24px; position: relative; z-in
 /* ══════════════════════════════════════════
    #6 CONNECT ZONE — Contact + Booking side by side
 ══════════════════════════════════════════ */
+/* Connect zone: Request a Quote + Schedule a Session side by side */
+.connect-zone { display: block; }
 @media (min-width: 1024px) {
-  section.connect-half {
-    display: inline-block;
-    width: 50%;
-    vertical-align: top;
-    box-sizing: border-box;
+  .connect-zone {
+    display: flex;
+    align-items: stretch;
+    max-width: 1280px;
+    margin: 0 auto;
   }
-  /* Vertical divider line between the two */
-  section#contact.connect-half {
+  .connect-zone section.connect-half {
+    flex: 1 1 50%;
+    width: 50%;
+    box-sizing: border-box;
+    min-width: 0;
+  }
+  /* Vertical divider line between the two halves */
+  .connect-zone section#contact.connect-half {
     border-right: 1px solid var(--grey3);
   }
-  section.connect-half .container {
-    padding-left: 5%;
-    padding-right: 5%;
+  .connect-zone section.connect-half .container {
+    padding-left: 48px;
+    padding-right: 48px;
+    width: 100%;
+    box-sizing: border-box;
   }
-  /* Stack the contact info + form vertically within each half (since narrower now) */
-  section#contact.connect-half .contact-grid {
+  /* Stack info + form vertically within each narrower half */
+  .connect-zone section#contact.connect-half .contact-grid {
     grid-template-columns: 1fr;
-    gap: 32px;
+    gap: 28px;
   }
-  section#booking.connect-half .booking-grid {
+  .connect-zone section#booking.connect-half .booking-grid {
     grid-template-columns: 1fr;
   }
 }
