@@ -28,7 +28,7 @@ jobs:
           action: "upload"
           ###### Repository/Build Configurations ######
           app_location: "/"        # App source code path (HTML lives in repo root)
-          api_location: ""         # STAGE 1: API temporarily disabled to isolate the static site. Re-enable as "api" in Stage 2.
+          api_location: "api"      # STAGE 2: API re-enabled — quote + booking functions
           output_location: ""      # No build step — static files served from root
           ###### End of Repository/Build Configurations ######
 
