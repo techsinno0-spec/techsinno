@@ -2,6 +2,7 @@
 // js/booking.js — TECHSINNO Booking Section (v2 - event listeners)
 // ============================================================
 
+window._formLoadedAt = window._formLoadedAt || Date.now();
 document.addEventListener('DOMContentLoaded', () => {
   // ── Booking type selection via event listeners ──────────
   const types = document.querySelectorAll('.booking-type');
@@ -53,6 +54,8 @@ document.addEventListener('DOMContentLoaded', () => {
       time:        form.querySelector('[name="bk_time"]').value,
       address:     form.querySelector('[name="bk_address"]').value.trim(),
       notes:       form.querySelector('[name="bk_notes"]').value.trim(),
+    website: form.querySelector('[name="website"]')?.value || '',   // honeypot
+    ts: window._formLoadedAt || Date.now(),                              // time-trap
     };
 
     if (!data.firstName || !data.lastName || !data.email || !data.date || !data.time) {
@@ -109,7 +112,7 @@ document.addEventListener('DOMContentLoaded', () => {
         msgBox.style.display = 'block';
         msgBox.style.color = '#ff4444';
         msgBox.style.borderColor = '#ff4444';
-        msgBox.textContent = '⚠ Could not submit. Please email techsinno0@gmail.com directly.';
+        msgBox.textContent = '⚠ Could not submit. Please email info@techsinno.com directly.';
       }
       console.error('[TECHSINNO] Booking error:', err);
     }

@@ -94,6 +94,8 @@ async function handleQuoteSubmit(e) {
     email:     form.querySelector('[name="email"]')?.value?.trim()     || '',
     service:   form.querySelector('[name="service"]')?.value           || '',
     message:   form.querySelector('[name="message"]')?.value?.trim()  || '',
+    website:   form.querySelector('[name="website"]')?.value || '',   // honeypot — humans never fill this
+    ts:        window._formLoadedAt || Date.now(),                      // time-trap
   };
 
   // Client-side pre-validation
@@ -150,7 +152,7 @@ async function handleQuoteSubmit(e) {
   } catch (networkErr) {
     setFormState(form, 'error');
     if (msgBox) {
-      msgBox.textContent = '⚠ Could not connect. Please email techsinno0@gmail.com directly.';
+      msgBox.textContent = '⚠ Could not connect. Please email info@techsinno.com directly.';
     }
     console.error('[TECHSINNO] Form submit error:', networkErr);
   }
@@ -158,6 +160,7 @@ async function handleQuoteSubmit(e) {
 
 // ── Wire up on DOM ready ──────────────────────────────────────
 document.addEventListener('DOMContentLoaded', () => {
+  window._formLoadedAt = Date.now();   // spam time-trap reference
   const form = document.getElementById('quote-form');
   if (!form) return;
   form.addEventListener('submit', handleQuoteSubmit);

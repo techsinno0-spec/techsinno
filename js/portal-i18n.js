@@ -38,7 +38,7 @@
     var mn = document.getElementById('sp-mobile-nav');
     if(tg && mn){ tg.addEventListener('click', function(){ mn.classList.toggle('open'); tg.classList.toggle('active'); }); }
     var form = document.getElementById('portal-form');
-    if(form){ form.addEventListener('submit', function(){ alert('Portal login is coming soon. Please contact frank@techsinno.com for access.'); }); }
+    if(form){ form.addEventListener('submit', function(){ alert('Portal login is coming soon. Please contact info@techsinno.com for access.'); }); }
   }
   if(document.readyState==='loading'){ document.addEventListener('DOMContentLoaded', init); } else { init(); }
 })();
