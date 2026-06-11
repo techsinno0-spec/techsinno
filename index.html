@@ -298,7 +298,7 @@
           <div class="contact-icon"><i class="ti ti-mail" aria-hidden="true"></i></div>
           <div>
             <h4 data-i18n="c_email">Email</h4>
-            <p>frank@techsinno.com</p>
+            <p>info@techsinno.com</p>
           </div>
         </div>
         <div class="contact-item">
@@ -326,6 +326,11 @@
 
       <!-- Form -->
       <form id="quote-form" class="contact-form fade-up" onsubmit="return false;">
+        <!-- Spam honeypot: invisible to humans, bots auto-fill it -->
+        <div style="position:absolute;left:-9999px;top:-9999px;" aria-hidden="true">
+          <label>Website <input type="text" name="website" tabindex="-1" autocomplete="off" /></label>
+        </div>
+
         <!-- Honeypot: hidden from humans, bots tend to fill it. Leave empty. -->
         <input type="text" name="company_website" tabindex="-1" autocomplete="off" aria-hidden="true" style="position:absolute;left:-9999px;width:1px;height:1px;opacity:0;" />
         <div class="form-row">
@@ -410,6 +415,11 @@
 
       <!-- Booking form -->
       <form id="booking-form" class="booking-form fade-up" onsubmit="return false;">
+        <!-- Spam honeypot: invisible to humans, bots auto-fill it -->
+        <div style="position:absolute;left:-9999px;top:-9999px;" aria-hidden="true">
+          <label>Website <input type="text" name="website" tabindex="-1" autocomplete="off" /></label>
+        </div>
+
         <!-- Honeypot: hidden from humans, bots tend to fill it. Leave empty. -->
         <input type="text" name="company_website" tabindex="-1" autocomplete="off" aria-hidden="true" style="position:absolute;left:-9999px;width:1px;height:1px;opacity:0;" />
         <input type="hidden" name="bookingType" id="bookingType" value="meeting" />
@@ -506,7 +516,7 @@
       <div class="footer-col">
         <h5 data-i18n="fc3">Contact</h5>
         <ul>
-          <li><a href="mailto:techsinno0@gmail.com" data-i18n="fl_e1">techsinno0@gmail.com</a></li>
+          <li><a href="mailto:info@techsinno.com" data-i18n="fl_e1">info@techsinno.com</a></li>
           <li><a href="#about" data-i18n="fl_e2">Kuilsriver, Western Cape</a></li>
           <li><a href="#about" data-i18n="fl_e3">South Africa &amp; DRC</a></li>
         </ul>
