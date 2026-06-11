@@ -8,7 +8,7 @@ const nodemailer = require('nodemailer');
 
 /**
  * Creates a Gmail SMTP transporter using environment variables.
- * GMAIL_USER     = techsinno0@gmail.com
+ * GMAIL_USER     = info@techsinno.com
  * GMAIL_APP_PASS = 16-character App Password from Google Account
  */
 function createTransporter() {
@@ -21,11 +21,36 @@ function createTransporter() {
   });
 }
 
+// ── Mail routing (override via Azure environment variables) ──
+const MAIL_TO_QUOTES   = process.env.MAIL_TO_QUOTES   || 'sales@techsinno.com';
+const MAIL_TO_BOOKINGS = process.env.MAIL_TO_BOOKINGS || 'frank@techsinno.com';
+const MAIL_REPLY_TO    = process.env.MAIL_REPLY_TO    || 'info@techsinno.com';
+
+// ── Security: HTML-escape user-supplied values before they are
+//    interpolated into HTML email templates (prevents HTML/script
+//    injection via form fields).
+function escapeHtml(v) {
+  return String(v ?? '')
+    .replace(/&/g, '&amp;')
+    .replace(/</g, '&lt;')
+    .replace(/>/g, '&gt;')
+    .replace(/"/g, '&quot;')
+    .replace(/'/g, '&#39;');
+}
+function escapeFields(obj) {
+  const out = { ...obj };
+  for (const k of Object.keys(out)) {
+    if (typeof out[k] === 'string') out[k] = escapeHtml(out[k]);
+  }
+  return out;
+}
+
 /**
  * Sends a quote notification email to Frank.
  * @param {Object} quote - The parsed quote submission
  */
 async function sendQuoteNotification(quote) {
+  quote = escapeFields(quote);   // security: neutralise HTML in user input
   const transporter = createTransporter();
 
   const serviceLabels = {
@@ -45,7 +70,8 @@ async function sendQuoteNotification(quote) {
   // ── Notification email to Frank ──────────────────────────
   const toFrank = {
     from:    `"TECHSINNO Website" <${process.env.GMAIL_USER}>`,
-    to:      process.env.GMAIL_USER,
+    replyTo: MAIL_REPLY_TO,
+    to:      MAIL_TO_QUOTES,
     subject: `[TECHSINNO] New Quote Request — ${serviceLabel} — ${quote.company || quote.firstName}`,
     html: `
 <!DOCTYPE html>
@@ -118,7 +144,7 @@ async function sendQuoteNotification(quote) {
     <div class="id-badge">REF: ${quote.id}</div>
   </div>
   <div class="footer">
-    <p>TECHSINNO (Pty) Ltd · Reg: 2022/364165/07 · techsinno0@gmail.com</p>
+    <p>TECHSINNO (Pty) Ltd · Reg: 2022/364165/07 · info@techsinno.com</p>
     <p>This email was generated automatically by the TECHSINNO website contact form.</p>
   </div>
 </div>
@@ -130,6 +156,7 @@ async function sendQuoteNotification(quote) {
   // ── Auto-reply to the client ─────────────────────────────
   const toClient = {
     from:    `"TECHSINNO Engineering" <${process.env.GMAIL_USER}>`,
+    replyTo: MAIL_REPLY_TO,
     to:      quote.email,
     subject: `We received your request — TECHSINNO`,
     html: `
@@ -177,7 +204,7 @@ async function sendQuoteNotification(quote) {
   </div>
   <div class="footer">
     <p>TECHSINNO (Pty) Ltd · Registered in South Africa · Reg: 2022/364165/07</p>
-    <p>Kuilsriver, Western Cape, South Africa · techsinno0@gmail.com</p>
+    <p>Kuilsriver, Western Cape, South Africa · info@techsinno.com</p>
     <p>This is an automated confirmation. Please do not reply to this if you did not submit a form.</p>
   </div>
 </div>
@@ -196,6 +223,7 @@ async function sendQuoteNotification(quote) {
  * @param {Object} booking - The parsed booking submission
  */
 async function sendBookingNotification(booking) {
+  booking = escapeFields(booking);   // security: neutralise HTML in user input
   const transporter = createTransporter();
 
   const typeLabels = {
@@ -214,7 +242,8 @@ async function sendBookingNotification(booking) {
   // ── Notification email to Frank ──────────────────────────
   const toFrank = {
     from:    `"TECHSINNO Website" <${process.env.GMAIL_USER}>`,
-    to:      process.env.GMAIL_USER,
+    replyTo: MAIL_REPLY_TO,
+    to:      MAIL_TO_BOOKINGS,
     subject: `[TECHSINNO] New Booking — ${typeLabel} — ${booking.date} ${booking.time}`,
     html: `
 <!DOCTYPE html>
@@ -293,7 +322,7 @@ async function sendBookingNotification(booking) {
     <div class="id-badge">REF: ${booking.id}</div>
   </div>
   <div class="footer">
-    <p>TECHSINNO (Pty) Ltd &middot; Reg: 2022/364165/07 &middot; techsinno0@gmail.com</p>
+    <p>TECHSINNO (Pty) Ltd &middot; Reg: 2022/364165/07 &middot; info@techsinno.com</p>
     <p>This email was generated automatically by the TECHSINNO website booking form.</p>
   </div>
 </div>
@@ -305,6 +334,7 @@ async function sendBookingNotification(booking) {
   // ── Confirmation to the client ───────────────────────────
   const toClient = {
     from:    `"TECHSINNO Engineering" <${process.env.GMAIL_USER}>`,
+    replyTo: MAIL_REPLY_TO,
     to:      booking.email,
     subject: `Booking received — TECHSINNO`,
     html: `
@@ -349,7 +379,7 @@ async function sendBookingNotification(booking) {
   </div>
   <div class="footer">
     <p>TECHSINNO (Pty) Ltd &middot; Registered in South Africa &middot; Reg: 2022/364165/07</p>
-    <p>Kuilsriver, Western Cape, South Africa &middot; techsinno0@gmail.com</p>
+    <p>Kuilsriver, Western Cape, South Africa &middot; info@techsinno.com</p>
     <p>This is an automated confirmation. Please ignore if you did not submit a booking.</p>
   </div>
 </div>
