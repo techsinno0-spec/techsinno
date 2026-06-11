@@ -5,7 +5,7 @@
 // Flow:
 //   1. Validate booking request body
 //   2. Save booking to Cosmos DB (bookings container)
-//   3. Send email to Frank (techsinno0@gmail.com)
+//   3. Send email to Frank (info@techsinno.com)
 //   4. Send confirmation to client
 //   5. Return success/error response
 // ============================================================
@@ -14,6 +14,7 @@ const { app } = require('@azure/functions');
 const { v4: uuidv4 } = require('uuid');
 const { sendBookingNotification } = require('../../shared/emailer');
 const { saveBooking } = require('../../shared/cosmosdb');
+const { checkSpam, fakeSuccess } = require('../../shared/spamguard');
 
 const VALID_TYPES = ['meeting', 'call', 'sitevisit'];
 
@@ -62,6 +63,14 @@ app.http('submitBooking', {
       body = await request.json();
     } catch {
       return { status: 400, jsonBody: { error: 'Invalid JSON body.' } };
+    }
+
+    // ── Spam protection ─────────────────────────────────
+    const spam = checkSpam(body || {}, request, ['notes']);
+    if (spam.spam) {
+      context.log(`[submitBooking] Blocked spam (${spam.reason})`);
+      if (spam.fake) return fakeSuccess();
+      return { status: 429, jsonBody: { success: false, errors: [spam.reason] } };
     }
 
     // ── Validate ────────────────────────────────────────
@@ -116,7 +125,7 @@ app.http('submitBooking', {
         status: 500,
         jsonBody: {
           success: false,
-          error: 'Booking failed. Please email us directly at techsinno0@gmail.com',
+          error: 'Booking failed. Please email us directly at info@techsinno.com',
         },
       };
     }

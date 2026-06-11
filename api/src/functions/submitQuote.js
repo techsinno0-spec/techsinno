@@ -5,7 +5,7 @@
 // Flow:
 //   1. Validate request body
 //   2. Save quote to Cosmos DB
-//   3. Send email to Frank (techsinno0@gmail.com)
+//   3. Send email to Frank (info@techsinno.com)
 //   4. Send auto-reply to client
 //   5. Return success/error response
 // ============================================================
@@ -14,6 +14,7 @@ const { app } = require('@azure/functions');
 const { v4: uuidv4 } = require('uuid');
 const { sendQuoteNotification } = require('../../shared/emailer');
 const { saveQuote } = require('../../shared/cosmosdb');
+const { checkSpam, fakeSuccess } = require('../../shared/spamguard');
 
 const VALID_SERVICES = ['repair', 'automation', 'iot', 'other'];
 
@@ -60,6 +61,14 @@ app.http('submitQuote', {
       body = await request.json();
     } catch {
       return { status: 400, jsonBody: { error: 'Invalid JSON body.' } };
+    }
+
+    // ── Spam protection ─────────────────────────────────
+    const spam = checkSpam(body || {}, request, ['message']);
+    if (spam.spam) {
+      context.log(`[submitQuote] Blocked spam (${spam.reason})`);
+      if (spam.fake) return fakeSuccess();
+      return { status: 429, jsonBody: { success: false, errors: [spam.reason] } };
     }
 
     // ── Validate ────────────────────────────────────────
@@ -111,7 +120,7 @@ app.http('submitQuote', {
         status: 500,
         jsonBody: {
           success: false,
-          error: 'Submission failed. Please email us directly at techsinno0@gmail.com',
+          error: 'Submission failed. Please email us directly at info@techsinno.com',
         },
       };
     }
