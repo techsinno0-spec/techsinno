@@ -16,7 +16,7 @@ const { sendQuoteNotification } = require('../../shared/emailer');
 const { saveQuote } = require('../../shared/cosmosdb');
 const { checkSpam, fakeSuccess } = require('../../shared/spamguard');
 
-const VALID_SERVICES = ['repair', 'automation', 'iot', 'other'];
+const VALID_SERVICES = ['electronics', 'pcb', 'automation', 'iot', 'other', 'repair'];
 
 function sanitise(str, maxLen = 500) {
   if (typeof str !== 'string') return '';
