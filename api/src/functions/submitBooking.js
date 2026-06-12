@@ -16,7 +16,7 @@ const { sendBookingNotification } = require('../../shared/emailer');
 const { saveBooking } = require('../../shared/cosmosdb');
 const { checkSpam, fakeSuccess } = require('../../shared/spamguard');
 
-const VALID_TYPES = ['meeting', 'call', 'sitevisit'];
+const VALID_TYPES = ['meeting', 'consultation', 'sitevisit', 'call'];
 
 function sanitise(str, maxLen = 500) {
   if (typeof str !== 'string') return '';
