@@ -275,7 +275,7 @@ section { position: relative; z-index: 2; }
   background: var(--white); border: 1px solid var(--green3);
   display: flex; align-items: center; justify-content: center;
   font-size: 26px; color: var(--green); transition: all 0.3s;
-  position: absolute; top: 156px; left: 24px; z-index: 3;
+  position: absolute; top: 124px; left: 24px; z-index: 3;
   box-shadow: 0 6px 16px rgba(10,22,40,0.18);
 }
 .service-card:hover .service-icon { background: var(--green); color: var(--white); }
@@ -1025,3 +1025,12 @@ footer { background: var(--navy); padding: 56px 0 24px; position: relative; z-in
 }
 .portal-login-box input:focus { outline: none; border-color: var(--green); }
 .portal-note { font-size: 11px; color: var(--grey); margin-top: 16px; line-height: 1.6; text-align: center; }
+
+
+/* Country flag images (replaces emoji flags that don't render on Windows) */
+.country-flag-img {
+  width: 64px; height: auto; display: block;
+  margin-bottom: 14px; border-radius: 6px;
+  box-shadow: 0 2px 8px rgba(10,22,40,0.25);
+  border: 1px solid rgba(10,22,40,0.08);
+}
