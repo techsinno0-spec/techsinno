@@ -227,9 +227,10 @@ async function sendBookingNotification(booking) {
   const transporter = createTransporter();
 
   const typeLabels = {
-    meeting:  'In-Person Meeting',
-    call:     'Phone / Video Call',
-    sitevisit:'On-Site Visit',
+    meeting:      'In-Person Meeting',
+    consultation: 'Technical Consultation',
+    call:         'Phone / Video Call',
+    sitevisit:    'On-Site Visit / Call-Out',
   };
 
   const typeLabel   = typeLabels[booking.bookingType] || booking.bookingType;
