@@ -42,6 +42,7 @@
       <li><a href="process.html" data-i18n="nav_process">Process</a></li>
       <li><a href="#about"   data-i18n="nav_2">About</a></li>
       <li><a href="#booking" data-i18n="nav_booking">Booking</a></li>
+        <li><a href="#feedback" data-i18n="nav_feedback">Feedback</a></li>
       <li><a href="#contact" data-i18n="nav_3">Contact</a></li>
       <li><a href="portal.html" class="nav-login" data-i18n="nav_login">Client Login</a></li>
     </ul>
@@ -485,6 +486,72 @@
 <!-- ══════════════════════════════════════════
      FOOTER
 ══════════════════════════════════════════ -->
+
+<!-- Feedback / Reviews Section -->
+<section id="feedback" class="feedback-section">
+  <div class="container">
+    <div class="services-header">
+      <div class="fade-up">
+        <span class="section-label" data-i18n="fb_label">Your voice</span>
+        <h2 data-i18n="fb_title">FEEDBACK &amp;<br>REVIEWS</h2>
+      </div>
+      <p class="fade-up" data-i18n="fb_desc">Worked with us, or have a thought to share? We'd love to hear it — a review, a suggestion, or a concern. Every message reaches us directly.</p>
+    </div>
+
+    <form id="feedback-form" class="feedback-form fade-up" onsubmit="return false;">
+      <!-- Spam honeypot -->
+      <div style="position:absolute;left:-9999px;top:-9999px;" aria-hidden="true">
+        <label>Website <input type="text" name="website" tabindex="-1" autocomplete="off" /></label>
+      </div>
+
+      <div class="fb-type-row">
+        <button type="button" class="fb-type active" data-fbtype="review"     data-i18n="fb_t_review">Review</button>
+        <button type="button" class="fb-type" data-fbtype="suggestion" data-i18n="fb_t_suggestion">Suggestion</button>
+        <button type="button" class="fb-type" data-fbtype="complaint"  data-i18n="fb_t_complaint">Complaint</button>
+        <button type="button" class="fb-type" data-fbtype="general"    data-i18n="fb_t_general">General</button>
+      </div>
+      <input type="hidden" name="feedbackType" id="feedbackType" value="review" />
+
+      <div class="fb-rating" id="fb-rating">
+        <span class="fb-rating-label" data-i18n="fb_rating">Your rating (optional):</span>
+        <span class="fb-stars">
+          <i class="ti ti-star fb-star" data-val="1"></i>
+          <i class="ti ti-star fb-star" data-val="2"></i>
+          <i class="ti ti-star fb-star" data-val="3"></i>
+          <i class="ti ti-star fb-star" data-val="4"></i>
+          <i class="ti ti-star fb-star" data-val="5"></i>
+        </span>
+        <input type="hidden" name="rating" id="fb-rating-val" value="" />
+      </div>
+
+      <div class="form-row">
+        <div class="form-group">
+          <label data-i18n="fb_name">Name</label>
+          <input type="text" name="name" required />
+        </div>
+        <div class="form-group">
+          <label data-i18n="fb_email">Email</label>
+          <input type="email" name="email" required />
+        </div>
+      </div>
+      <div class="form-group">
+        <label data-i18n="fb_company">Company (optional)</label>
+        <input type="text" name="company" />
+      </div>
+      <div class="form-group">
+        <label data-i18n="fb_message">Your message</label>
+        <textarea name="message" rows="4" data-i18n="fb_msg_ph" placeholder="Tell us about your experience..." required></textarea>
+      </div>
+      <label class="fb-consent">
+        <input type="checkbox" name="consentToPublish" id="fb-consent" />
+        <span data-i18n="fb_consent">I'm happy for TECHSINNO to publish my review as a testimonial.</span>
+      </label>
+      <button type="submit" class="btn-primary" id="fb-submit" style="width:100%;" data-i18n="fb_submit">Send Feedback &rarr;</button>
+      <div id="fb-status" class="form-status"></div>
+    </form>
+  </div>
+</section>
+
 <footer>
   <div class="container">
     <div class="footer-top">
@@ -536,6 +603,7 @@
 </footer>
 
 <script src="js/main.js"></script>
+<script src="js/feedback.js"></script>
 <script src="js/form.js"></script>
 <script src="js/welcome.js"></script>
 <script src="js/booking.js"></script>
