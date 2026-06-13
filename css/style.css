@@ -1059,3 +1059,40 @@ footer { background: var(--navy); padding: 56px 0 24px; position: relative; z-in
   .wa-float:hover { width: 54px; }   /* tap-only on mobile, no expand */
   .wa-float-label { display: none; }
 }
+
+/* ── PORTAL "COMING SOON" ── */
+.portal-soon { text-align: center; }
+.portal-soon-icon {
+  width: 72px; height: 72px; margin: 0 auto 18px;
+  display: flex; align-items: center; justify-content: center;
+  background: var(--green, #00cc44); color: #fff; border-radius: 18px;
+  font-size: 36px; box-shadow: 0 8px 24px rgba(0,204,68,0.35);
+}
+.portal-soon h3 { margin-bottom: 12px; }
+.portal-soon-text { color: var(--grey, #555); line-height: 1.7; margin-bottom: 18px; max-width: 460px; margin-left: auto; margin-right: auto; }
+.portal-soon-btns { display: flex; gap: 12px; justify-content: center; flex-wrap: wrap; margin-top: 22px; }
+
+/* ── FEEDBACK SECTION ── */
+.feedback-section { padding: 90px 0; background: var(--bg2, #f4f7fa); }
+.feedback-form {
+  max-width: 680px; margin: 40px auto 0; background: var(--white, #fff);
+  padding: 36px; border-radius: 18px; box-shadow: 0 8px 40px rgba(10,22,40,0.08);
+  position: relative;
+}
+.fb-type-row { display: flex; gap: 8px; flex-wrap: wrap; margin-bottom: 24px; }
+.fb-type {
+  flex: 1; min-width: 90px; padding: 10px 12px; border-radius: 10px;
+  border: 1px solid var(--grey3, #dce3ea); background: var(--bg2, #f4f7fa);
+  color: var(--navy3, #44546a); font-family: var(--font-mono, monospace);
+  font-size: 12px; letter-spacing: 1px; text-transform: uppercase; cursor: pointer;
+  transition: all 0.2s;
+}
+.fb-type:hover { border-color: var(--green, #00cc44); }
+.fb-type.active { background: var(--green, #00cc44); color: #fff; border-color: var(--green, #00cc44); }
+.fb-rating { display: flex; align-items: center; gap: 12px; margin-bottom: 22px; flex-wrap: wrap; }
+.fb-rating-label { font-size: 13px; color: var(--grey, #555); font-family: var(--font-mono, monospace); }
+.fb-stars { display: inline-flex; gap: 4px; }
+.fb-star { font-size: 26px; color: #ffc107; cursor: pointer; transition: transform 0.15s; }
+.fb-star:hover { transform: scale(1.15); }
+.fb-consent { display: flex; align-items: flex-start; gap: 10px; margin: 18px 0 22px; font-size: 13px; color: var(--grey, #555); line-height: 1.5; cursor: pointer; }
+.fb-consent input { margin-top: 3px; flex-shrink: 0; }
