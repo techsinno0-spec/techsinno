@@ -393,4 +393,95 @@ async function sendBookingNotification(booking) {
   await transporter.sendMail(toClient);
 }
 
-module.exports = { sendQuoteNotification, sendBookingNotification };
+
+
+/**
+ * Sends a feedback notification to info@ + a thank-you to the customer.
+ */
+async function sendFeedbackNotification(feedback) {
+  feedback = escapeFields(feedback);
+  const transporter = createTransporter();
+
+  const typeLabels = {
+    review:     'Review / Testimonial',
+    complaint:  'Complaint',
+    suggestion: 'Suggestion',
+    general:    'General Feedback',
+  };
+  const typeLabel = typeLabels[feedback.feedbackType] || 'Feedback';
+  const stars = feedback.rating ? '\u2605'.repeat(Number(feedback.rating)) + '\u2606'.repeat(5 - Number(feedback.rating)) : '—';
+  const submittedAt = new Date().toLocaleString('en-ZA', { timeZone: 'Africa/Johannesburg', dateStyle: 'full', timeStyle: 'short' });
+
+  const toFrank = {
+    from:    `"TECHSINNO Website" <${process.env.GMAIL_USER}>`,
+    replyTo: MAIL_REPLY_TO,
+    to:      MAIL_REPLY_TO,
+    subject: `[TECHSINNO] ${typeLabel}${feedback.rating ? ' — ' + feedback.rating + '/5' : ''} from ${feedback.name}`,
+    html: `
+<!DOCTYPE html><html><head><meta charset="UTF-8"/></head>
+<body style="font-family:'Courier New',monospace;background:#0a0a0a;color:#fff;margin:0;padding:0;">
+<div style="max-width:600px;margin:0 auto;background:#111;border-top:4px solid #00FF41;">
+  <div style="background:#000;padding:24px 32px;border-bottom:1px solid #222;">
+    <h1 style="color:#00FF41;font-size:22px;margin:0;letter-spacing:4px;">// TECHSINNO</h1>
+    <p style="color:#888;font-size:11px;margin:6px 0 0;letter-spacing:2px;">NEW ${typeLabel.toUpperCase()}</p>
+  </div>
+  <div style="padding:32px;">
+    <div style="background:#001a00;border:1px solid #00FF41;padding:16px 20px;margin-bottom:24px;">
+      <p style="color:#00FF41;font-size:13px;margin:0;letter-spacing:1px;">&#9654; RECEIVED — ${submittedAt}</p>
+    </div>
+    <div style="margin-bottom:16px;border-bottom:1px solid #1a1a1a;padding-bottom:16px;">
+      <div style="font-size:10px;color:#555;letter-spacing:3px;">TYPE</div>
+      <div style="font-size:16px;color:#00FF41;">${typeLabel}</div>
+    </div>
+    <div style="margin-bottom:16px;border-bottom:1px solid #1a1a1a;padding-bottom:16px;">
+      <div style="font-size:10px;color:#555;letter-spacing:3px;">RATING</div>
+      <div style="font-size:20px;color:#ffd700;">${stars}</div>
+    </div>
+    <div style="margin-bottom:16px;border-bottom:1px solid #1a1a1a;padding-bottom:16px;">
+      <div style="font-size:10px;color:#555;letter-spacing:3px;">FROM</div>
+      <div style="font-size:14px;color:#fff;">${feedback.name}${feedback.company ? ' — ' + feedback.company : ''}</div>
+      <div style="font-size:13px;"><a href="mailto:${feedback.email}" style="color:#00FF41;">${feedback.email}</a></div>
+    </div>
+    <div style="margin-bottom:16px;">
+      <div style="font-size:10px;color:#555;letter-spacing:3px;">MESSAGE</div>
+      <div style="background:#0a0a0a;border-left:3px solid #00FF41;padding:16px;margin-top:8px;">
+        <p style="color:#ccc;font-size:13px;line-height:1.7;margin:0;white-space:pre-wrap;">${feedback.message}</p>
+      </div>
+    </div>
+    <div style="display:inline-block;background:#0a0a0a;border:1px solid ${feedback.consentToPublish ? '#00FF41' : '#553300'};padding:6px 14px;font-size:11px;color:${feedback.consentToPublish ? '#00FF41' : '#aa7700'};letter-spacing:1px;margin-top:8px;">
+      ${feedback.consentToPublish ? '\u2713 OK TO PUBLISH AS TESTIMONIAL' : '\u2717 DO NOT PUBLISH (private feedback)'}
+    </div>
+    <div style="margin-top:16px;font-size:11px;color:#555;">REF: ${feedback.id}</div>
+  </div>
+</div></body></html>`,
+  };
+
+  const toCustomer = {
+    from:    `"TECHSINNO Engineering" <${process.env.GMAIL_USER}>`,
+    replyTo: MAIL_REPLY_TO,
+    to:      feedback.email,
+    subject: `Thank you for your feedback — TECHSINNO`,
+    html: `
+<!DOCTYPE html><html><head><meta charset="UTF-8"/></head>
+<body style="font-family:Arial,sans-serif;background:#f5f5f5;color:#333;margin:0;padding:0;">
+<div style="max-width:600px;margin:0 auto;background:#fff;border-top:4px solid #00cc33;">
+  <div style="background:#0a0a0a;padding:24px 32px;">
+    <h1 style="color:#00FF41;font-family:'Courier New',monospace;font-size:20px;margin:0;letter-spacing:3px;">// TECHSINNO</h1>
+  </div>
+  <div style="padding:32px;">
+    <h2 style="font-size:20px;color:#111;margin-bottom:8px;">Thank you, ${feedback.name}.</h2>
+    <p style="font-size:14px;color:#555;line-height:1.7;">We've received your ${typeLabel.toLowerCase()} and we genuinely appreciate you taking the time to share it. Every piece of feedback helps us serve you and other clients better.</p>
+    ${feedback.feedbackType === 'complaint' ? '<p style="font-size:14px;color:#555;line-height:1.7;">As this concerns an issue, we will look into it and get back to you personally as soon as possible.</p>' : ''}
+    <p style="font-size:14px;color:#555;line-height:1.7;">If there's anything else we can help with, simply reply to this email.</p>
+  </div>
+  <div style="background:#f0f0f0;padding:16px 32px;border-top:1px solid #ddd;">
+    <p style="font-size:11px;color:#999;margin:0;line-height:1.8;">TECHSINNO (Pty) Ltd &middot; Reg: 2022/364165/07 &middot; Cape Town, Western Cape &middot; info@techsinno.com</p>
+  </div>
+</div></body></html>`,
+  };
+
+  await transporter.sendMail(toFrank);
+  await transporter.sendMail(toCustomer);
+}
+
+module.exports = { sendQuoteNotification, sendBookingNotification, sendFeedbackNotification };

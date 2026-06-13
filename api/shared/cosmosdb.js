@@ -90,4 +90,24 @@ async function getBookings(bookingType) {
   return resources;
 }
 
-module.exports = { saveQuote, getQuotes, saveBooking, getBookings };
+
+// ── Feedback ─────────────────────────────────────────────────
+
+async function saveFeedback(feedback) {
+  const ctrName = process.env.COSMOS_FEEDBACK_CONTAINER || 'feedback';
+  const container = await getContainer(ctrName, '/feedbackType');
+  const { resource } = await container.items.create(feedback);
+  return resource;
+}
+
+async function getFeedback(feedbackType) {
+  const ctrName = process.env.COSMOS_FEEDBACK_CONTAINER || 'feedback';
+  const container = await getContainer(ctrName, '/feedbackType');
+  const query = feedbackType
+    ? { query: 'SELECT * FROM c WHERE c.feedbackType = @t ORDER BY c.submittedAt DESC', parameters: [{ name: '@t', value: feedbackType }] }
+    : { query: 'SELECT * FROM c ORDER BY c.submittedAt DESC' };
+  const { resources } = await container.items.query(query).fetchAll();
+  return resources;
+}
+
+module.exports = { saveQuote, getQuotes, saveBooking, getBookings, saveFeedback, getFeedback };
