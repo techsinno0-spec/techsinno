@@ -1096,3 +1096,26 @@ footer { background: var(--navy); padding: 56px 0 24px; position: relative; z-in
 .fb-star:hover { transform: scale(1.15); }
 .fb-consent { display: flex; align-items: flex-start; gap: 10px; margin: 18px 0 22px; font-size: 13px; color: var(--grey, #555); line-height: 1.5; cursor: pointer; }
 .fb-consent input { margin-top: 3px; flex-shrink: 0; }
+
+/* ── WELCOME BANNER — mobile refinement ── */
+@media (max-width: 600px) {
+  #welcome-banner {
+    bottom: 16px;
+    right: 12px;
+    left: 12px;            /* span with margins instead of fixed huge width */
+    width: auto;
+    max-width: none;
+    padding: 16px 18px;
+    border-radius: 14px;
+    font-size: 14px;
+  }
+  #welcome-banner p { font-size: 13px; line-height: 1.5; }
+  /* Keep WhatsApp button clear of the banner: move WA up when banner likely visible */
+  .wa-float { bottom: 92px; }   /* sits above the bottom banner on mobile */
+}
+
+/* Tighten banner text on very small screens */
+@media (max-width: 380px) {
+  #welcome-banner { padding: 14px 16px; }
+  #welcome-banner p { font-size: 12.5px; }
+}
