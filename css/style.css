@@ -121,7 +121,7 @@ section { position: relative; z-index: 2; }
   min-height: 100vh; display: flex; align-items: center;
   padding-top: 88px;
   position: relative;
-  background: #0a1628;
+  background: linear-gradient(135deg, #eef4fb 0%, #ffffff 55%, #e7f0fa 100%);
 }
 .hero-bg-image {
   position: absolute; inset: 0; z-index: 0;
@@ -132,17 +132,17 @@ section { position: relative; z-index: 2; }
 }
 .hero-bg-overlay {
   position: absolute; inset: 0; z-index: 1;
-  background: linear-gradient(135deg, rgba(10,22,40,0.82) 0%, rgba(10,22,40,0.55) 50%, rgba(10,22,40,0.35) 100%);
+  background: linear-gradient(135deg, rgba(255,255,255,0.92) 0%, rgba(238,244,251,0.88) 50%, rgba(231,240,250,0.85) 100%);
 }
 #hero .container { position: relative; z-index: 2; }
 
 /* Hero text on dark — white */
-.hero-dark .hero-title { color: #ffffff; text-shadow: 0 2px 20px rgba(0,0,0,0.5); }
-.hero-dark .hero-title .line2 { color: #5BAEE8; text-shadow: 0 0 30px rgba(91,174,232,0.5); }
-.hero-dark .hero-eyebrow { color: #5BAEE8; }
-.hero-dark .hero-stat { background: rgba(255,255,255,0.07); backdrop-filter: blur(10px); border: 1px solid rgba(46,127,199,0.3); }
-.hero-dark .hero-stat-num { color: #5BAEE8; }
-.hero-dark .hero-stat-label { color: #c8d4e0; }
+.hero-dark .hero-title { color: var(--navy); text-shadow: none; }
+.hero-dark .hero-title .line2 { color: #2E7FC7; text-shadow: none; }
+.hero-dark .hero-eyebrow { color: #2E7FC7; }
+.hero-dark .hero-stat { background: #ffffff; border: 1px solid rgba(46,127,199,0.25); box-shadow: 0 4px 18px rgba(10,22,40,0.06); }
+.hero-dark .hero-stat-num { color: #2E7FC7; }
+.hero-dark .hero-stat-label { color: var(--grey); }
 
 .hero-content {
   display: grid; grid-template-columns: 1fr 400px;
@@ -450,7 +450,7 @@ footer { background: var(--navy); padding: 56px 0 24px; position: relative; z-in
   box-shadow: 0 4px 20px rgba(91,174,232,0.4), 0 0 40px rgba(91,174,232,0.2);
 }
 .hero-dark .btn-outline {
-  color: #ffffff; border-color: #ffffff;
+  color: var(--navy); border-color: var(--navy);
 }
 .hero-dark .btn-outline:hover {
   background: #2E7FC7; border-color: #2E7FC7; color: #fff;
